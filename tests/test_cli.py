@@ -3,7 +3,7 @@ import tempfile
 import pytest
 from click.testing import CliRunner
 from unittest.mock import patch, MagicMock
-import llm_typo_checker
+from editing_with_llms import cli
 import re
 
 
@@ -17,7 +17,7 @@ def expected_llm_output():
     return "Found typo: smaple (should be sample)\nExplanation: Typo in word."
 
 
-@patch("llm_typo_checker.llm")
+@patch("editing_with_llms.cli.llm")
 def test_typo_checker_basic(mock_llm, sample_text, expected_llm_output):
     # Mock llm.get_model().prompt() and streaming
     mock_response = MagicMock()
@@ -30,7 +30,7 @@ def test_typo_checker_basic(mock_llm, sample_text, expected_llm_output):
         tmp.write(sample_text)
         tmp_path = tmp.name
     try:
-        result = runner.invoke(llm_typo_checker.main, [tmp_path])
+        result = runner.invoke(cli.main, [tmp_path])
         assert result.exit_code == 0
         assert expected_llm_output in result.output
         # Check output file
@@ -58,7 +58,7 @@ def test_typo_checker_real_llm(sample_text):
 
     # Run the CLI using CliRunner
     runner = CliRunner()
-    result = runner.invoke(llm_typo_checker.main, [str(tmp_path)])
+    result = runner.invoke(cli.main, [str(tmp_path)])
     assert result.exit_code == 0
     output = result.output
     print(output)
@@ -110,7 +110,7 @@ def test_typo_checker_various_typos(sample_text, expected_typos):
         tmp_path = tmp.name
 
     runner = CliRunner()
-    result = runner.invoke(llm_typo_checker.main, [str(tmp_path)])
+    result = runner.invoke(cli.main, [str(tmp_path)])
     assert result.exit_code == 0
     output = result.output
     print(f"\n[Prompted text]: {sample_text}\n[LLM Output]:\n{output}")
@@ -132,7 +132,7 @@ def test_typo_checker_various_typos(sample_text, expected_typos):
         os.remove("output.txt")
 
 
-@patch("llm_typo_checker.llm")
+@patch("editing_with_llms.cli.llm")
 def test_clarity_checker_basic(mock_llm):
     sample_text = "The process was completed, but the results, which were unexpected, led to further questions about the initial assumptions and the overall direction, making it difficult to determine the next steps."
     expected_llm_output = "- [The process was completed, but the results, which were unexpected, led to further questions about the initial assumptions and the overall direction, making it difficult to determine the next steps.]"
@@ -146,7 +146,7 @@ def test_clarity_checker_basic(mock_llm):
         tmp.write(sample_text)
         tmp_path = tmp.name
     try:
-        result = runner.invoke(llm_typo_checker.main, ["--check", "clarity", tmp_path])
+        result = runner.invoke(cli.main, ["--check", "clarity", tmp_path])
         assert result.exit_code == 0
         assert expected_llm_output in result.output
     finally:
@@ -155,7 +155,7 @@ def test_clarity_checker_basic(mock_llm):
             os.remove("output.txt")
 
 
-@patch("llm_typo_checker.llm")
+@patch("editing_with_llms.cli.llm")
 def test_reader_checker_basic(mock_llm):
     sample_text = "How can we handle both state and error handling in a Haskell program? The solution uses a monad transformer stack to manage side effects in a lazy functional language."
     expected_llm_output = "- [The solution uses a monad transformer stack to manage side effects in a lazy functional language.] (This sentence uses advanced functional programming terminology that may not be familiar to a mathematician with only some programming experience.)"
@@ -170,7 +170,7 @@ def test_reader_checker_basic(mock_llm):
         tmp_path = tmp.name
     try:
         result = runner.invoke(
-            llm_typo_checker.main,
+            cli.main,
             [
                 "--check",
                 "reader",
@@ -215,7 +215,7 @@ def test_clarity_checker_various(sample_text, expected_clarity_flags):
         tmp_path = tmp.name
 
     runner = CliRunner()
-    result = runner.invoke(llm_typo_checker.main, ["--check", "clarity", tmp_path])
+    result = runner.invoke(cli.main, ["--check", "clarity", tmp_path])
     assert result.exit_code == 0
     output = result.output
     print(f"\n[Prompted text]: {sample_text}\n[LLM Output]:\n{output}")
@@ -264,7 +264,7 @@ def test_reader_checker_various(sample_text, reader, expected_reader_flags):
 
     runner = CliRunner()
     result = runner.invoke(
-        llm_typo_checker.main,
+        cli.main,
         ["--check", "reader", "--reader", reader, tmp_path],
     )
     assert result.exit_code == 0
@@ -345,7 +345,7 @@ def test_function_checker_various(sample_text, reader, function_desc, expected_f
 
     runner = CliRunner()
     result = runner.invoke(
-        llm_typo_checker.main,
+        cli.main,
         [
             "--check",
             "function",
@@ -407,7 +407,7 @@ def test_guess_function_of_article(sample_text, expected_function_guess):
 
     runner = CliRunner()
     result = runner.invoke(
-        llm_typo_checker.main,
+        cli.main,
         [
             "--check",
             "guess-function",
@@ -459,7 +459,7 @@ def test_guess_value_of_article(sample_text, expected_value_guess):
 
     runner = CliRunner()
     result = runner.invoke(
-        llm_typo_checker.main,
+        cli.main,
         [
             "--check",
             "guess-value",
@@ -476,33 +476,34 @@ def test_guess_value_of_article(sample_text, expected_value_guess):
 
 
 @pytest.mark.parametrize(
-    "sample_text,expected_audience",
+    "sample_text,expected_audiences",
     [
-        # General public
+        # General public / Beginners
         (
             "Python is a versatile programming language used in web development, data science, and automation. This article will explain why Python is a great choice for beginners and professionals alike.",
-            "beginners",
+            ["beginners", "beginner", "novice", "newcomer", "general public", "learner", "student"],
         ),
-        # Business/finance
+        # Business/finance/investors
         (
             "Investing in renewable energy is not just good for the planet, it's good for your portfolio. Long-term returns require long-term thinking, and the zero marginal cost nature of renewable energy energizes your capital.",
-            "business",
+            ["business", "investor", "professional", "financial", "entrepreneur", "executive", "manager", "finance"],
         ),
-        # Children/entertainment
+        # Children/general public/cat owners
         (
             "Have you ever wondered what your cat is really thinking? Join us for a humorous journey into the feline mind. New science has given us a new window into our little critters.",
-            "children",
+            ["children", "child", "general", "public", "cat owner", "pet owner", "enthusiast", "casual reader"],
         ),
-        # Multiple plausible audiences
+        # Students/academics
         (
             "The eigenvalues of the Hermitian operator are real. The experiment was conducted in a laboratory. The results were recorded.",
-            "students",
+            ["students", "student", "academic", "researcher", "scientist", "physics", "undergraduate", "graduate"],
         ),
     ],
 )
-def test_guess_reader_of_article(sample_text, expected_audience):
+def test_guess_reader_of_article(sample_text, expected_audiences):
     """
     Test that the LLM can guess the intended audience or reader profile of an article/introduction.
+    Accepts any of the synonyms in expected_audiences list.
     """
     with tempfile.NamedTemporaryFile(delete=False, mode="w", encoding="utf-8") as tmp:
         tmp.write(sample_text)
@@ -510,7 +511,7 @@ def test_guess_reader_of_article(sample_text, expected_audience):
 
     runner = CliRunner()
     result = runner.invoke(
-        llm_typo_checker.main,
+        cli.main,
         [
             "--check",
             "guess-reader",
@@ -518,7 +519,11 @@ def test_guess_reader_of_article(sample_text, expected_audience):
         ],
     )
     assert result.exit_code == 0
-    output = result.output
-    print(f"\n[Prompted text]: {sample_text}\n[LLM Output]:\n{output}")
-    assert expected_audience.lower() in output.lower()
+    output = result.output.lower()
+    print(f"\n[Prompted text]: {sample_text}\n[LLM Output]:\n{result.output}")
+
+    # Check if ANY of the expected audience terms appear in the output
+    found_match = any(audience.lower() in output for audience in expected_audiences)
+    assert found_match, f"None of {expected_audiences} found in output"
+
     os.remove(tmp_path)

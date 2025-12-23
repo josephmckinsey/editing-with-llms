@@ -1,0 +1,69 @@
+[build-system]
+requires = ["setuptools>=61.0", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "editing-with-llms"
+version = "0.1.0"
+description = "A CLI-based text editing tool that uses LLMs to bridge the author-reader gap"
+readme = "README.md"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+authors = [
+    {name = "Joseph McKinsey", email = "josephmckinsey2@gmail.com"}
+]
+classifiers = [
+    "Development Status :: 3 - Alpha",
+    "Intended Audience :: Developers",
+    "License :: OSI Approved :: MIT License",
+    "Programming Language :: Python :: 3",
+    "Programming Language :: Python :: 3.10",
+    "Programming Language :: Python :: 3.11",
+    "Programming Language :: Python :: 3.12",
+    "Programming Language :: Python :: 3.13",
+    "Topic :: Text Processing :: Linguistic",
+]
+
+dependencies = [
+    "click>=8.0",
+    "llm>=0.26",
+    "pyyaml>=6.0",
+]
+
+[project.optional-dependencies]
+local-checks = [
+    "proselint>=0.16.0",
+]
+dev = [
+    "pytest>=7.0",
+    "pytest-cov>=4.0",
+]
+all = [
+    "editing-with-llms[local-checks,dev]",
+]
+
+[project.scripts]
+writing-buddy = "editing_with_llms.cli:main"
+
+[project.urls]
+Homepage = "https://github.com/josephmckinsey/editing-with-llms"
+Repository = "https://github.com/josephmckinsey/editing-with-llms"
+Issues = "https://github.com/josephmckinsey/editing-with-llms/issues"
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v --cov=editing_with_llms --cov-report=term-missing"
+
+[tool.coverage.run]
+source = ["src"]
+omit = [
+    "*/tests/*",
+    "*/venv/*",
+    "*/.venv/*",
+]
