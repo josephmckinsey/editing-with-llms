@@ -10,7 +10,8 @@ A CLI-based text editing tool that uses LLMs to bridge the author-reader gap. Th
 ## Current Architecture
 
 ### Core Components
-- **llm_typo_checker.py**: Main CLI tool built with Click
+- **src/editing_with_llms/cli.py**: Main CLI tool built with Click
+- **writing-buddy**: CLI command (installed via pyproject.toml)
 - **llm library**: Uses Simon Willison's llm Python library for LLM access
 - **OpenRouter**: User typically uses OpenRouter for cost-effective testing before using expensive models
 
@@ -26,12 +27,25 @@ A CLI-based text editing tool that uses LLMs to bridge the author-reader gap. Th
 
 ### Current Workflow
 ```bash
-python llm_typo_checker.py --check reader \
+writing-buddy --check reader \
   --reader "a Bachelor's in mathematics who mostly knows what formal verification is" \
   test
 ```
 
 Output goes to both console (streaming) and `output.txt`
+
+### Package Structure
+```
+editing-with-llms/
+├── src/
+│   └── editing_with_llms/
+│       ├── __init__.py
+│       └── cli.py           # Main CLI implementation
+├── tests/
+│   └── test_cli.py         # Test suite
+├── pyproject.toml          # Modern package config
+└── ...
+```
 
 ## Known Limitations & User Concerns
 
@@ -56,9 +70,10 @@ Output goes to both console (streaming) and `output.txt`
 - Trade-off: speed/cost vs. consistency with LLM-based checks
 
 ## Development Context
-- Python 3.13
-- Dependencies: click, llm
-- Has test suite (test_llm_typo_checker.py)
+- Python 3.13+
+- Core dependencies: click, llm, pyyaml
+- Optional dependencies: proselint (for local style checks)
+- Dev dependencies: pytest, pytest-cov
 - Uses venv for environment management
 - Git-tracked, MIT licensed
 

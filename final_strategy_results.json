@@ -1,0 +1,1428 @@
+{
+  "num_trials": 50,
+  "statistics": {
+    "mean": 3.06,
+    "stdev": 3.3467010866322235,
+    "min": 0,
+    "max": 13,
+    "median": 1.5
+  },
+  "threshold_analysis": [
+    {
+      "threshold": 70,
+      "precision": 0.17391304347826086,
+      "recall": 1.0,
+      "f1": 0.29629629629629634,
+      "real": 4,
+      "false": 2,
+      "unknown": 17,
+      "total": 23
+    },
+    {
+      "threshold": 75,
+      "precision": 0.17391304347826086,
+      "recall": 1.0,
+      "f1": 0.29629629629629634,
+      "real": 4,
+      "false": 2,
+      "unknown": 17,
+      "total": 23
+    },
+    {
+      "threshold": 80,
+      "precision": 0.19047619047619047,
+      "recall": 1.0,
+      "f1": 0.32,
+      "real": 4,
+      "false": 2,
+      "unknown": 15,
+      "total": 21
+    },
+    {
+      "threshold": 85,
+      "precision": 0.2,
+      "recall": 1.0,
+      "f1": 0.33333333333333337,
+      "real": 4,
+      "false": 1,
+      "unknown": 15,
+      "total": 20
+    },
+    {
+      "threshold": 90,
+      "precision": 0.5,
+      "recall": 1.0,
+      "f1": 0.6666666666666666,
+      "real": 4,
+      "false": 1,
+      "unknown": 3,
+      "total": 8
+    },
+    {
+      "threshold": 95,
+      "precision": 0,
+      "recall": 0.0,
+      "f1": 0,
+      "real": 0,
+      "false": 0,
+      "unknown": 0,
+      "total": 0
+    }
+  ],
+  "trials": [
+    {
+      "trial": 1,
+      "issues_found": 6,
+      "issues": [
+        {
+          "text": "square $`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+          "explanation": "Missing period at the end of the second sentence.",
+          "line": 7,
+          "confidence": 90,
+          "severity": "high"
+        },
+        {
+          "text": "I'll present some of my formalization below using Verso, Lean's new HTML generation tool. More importantly, I'll also tell you about the other interesting facts you learn by thinking hard about every detail while coding a formalization, such as Holder continuity, computability, partial invertibility, etc. Despite disappointing AI provers, promising inline visualizations with ProofWidgets, and our lovely library of math `mathlib`, the challenging gaps left by spatial intuition leave a lot of gnarly induction, casework, and algebra, along with some confusing remnants from `mathlib` and casting obligations.",
+          "explanation": "\"Holder continuity\" should be \"H\u00f6lder continuity\" (with an umlaut).",
+          "line": 12,
+          "confidence": 80,
+          "severity": "medium"
+        },
+        {
+          "text": "Unlike most mathematical objects, their properties are succinct through drawings rather than just the definitions.",
+          "explanation": "\"succinct through drawings\" is a bit awkward. Could be rephrased for clarity, e.g., \"best communicated through drawings\" or \"more succinctly represented by drawings.\"",
+          "line": 28,
+          "confidence": 70,
+          "severity": "low"
+        },
+        {
+          "text": "By hypothesis, we'll depict the curve for the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.",
+          "explanation": "\"ending on the right to the right\" is redundant. Likely meant \"ending to the right\".",
+          "line": 32,
+          "confidence": 95,
+          "severity": "high"
+        },
+        {
+          "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+          "explanation": "The fourth line of the definition has `H_n` where it should likely be `H_{n-1}` for consistency with the other cases.",
+          "line": 53,
+          "confidence": 75,
+          "severity": "high"
+        },
+        {
+          "text": "From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "\"$`H_n(i)` is only one block off from $`H_i(i + 1)`.\" The subscript `i` in `H_i(i + 1)` seems to be a typo and should likely be `n`.",
+          "line": 74,
+          "confidence": 90,
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "trial": 2,
+      "issues_found": 13,
+      "issues": [
+        {
+          "text": "$`\\LaTeX` instead of $\\LaTeX$",
+          "explanation": "The first LaTeX command is wrapped in backticks and dollar signs, while the second is only wrapped in dollar signs. This creates an inconsistency.",
+          "line": 1,
+          "confidence": 80,
+          "severity": "low"
+        },
+        {
+          "text": "square $`[0, 1] \\times [0, 1]`. To those",
+          "explanation": "There is a spurious backtick after the bracket.",
+          "line": 7,
+          "confidence": 95,
+          "severity": "medium"
+        },
+        {
+          "text": "Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+          "explanation": "\"Hilbert curve needs\" should likely be \"Hilbert curve's need\" or \"Hilbert curve necessitates.\"",
+          "line": 12,
+          "confidence": 70,
+          "severity": "medium"
+        },
+        {
+          "text": "{ref definition}[The Definition of the Hilbert Curve]",
+          "explanation": "There is extra spacing between `ref` and `definition`, and between `definition` and the bracket. This is likely an issue with the markup.",
+          "line": 17,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "{ref informalproofs}[Informal Versions of Formalized Theorems and Proofs]",
+          "explanation": "There is extra spacing between `ref` and `informalproofs`, and between `informalproofs` and the bracket. This is likely an issue with the markup.",
+          "line": 19,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "{ref leandesign}[Lean Design Decisions and Selected Proofs]",
+          "explanation": "There is extra spacing between `ref` and `leandesign`, and between `leandesign` and the bracket. This is likely an issue with the markup.",
+          "line": 20,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "{ref additionaldirections}[Additional Directions]",
+          "explanation": "There is extra spacing between `ref` and `additionaldirections`, and between `additionaldirections` and the bracket. This is likely an issue with the markup.",
+          "line": 21,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "{ref proscons}[Pros and Cons of using Lean here]",
+          "explanation": "There is extra spacing between `ref` and `proscons`, and between `proscons` and the bracket. This is likely an issue with the markup.",
+          "line": 22,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "{ref conclusion}[Conclusion]",
+          "explanation": "There is extra spacing between `ref` and `conclusion`, and between `conclusion` and the bracket. This is likely an issue with the markup.",
+          "line": 23,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "{ref verso}[P.S. Verso is fine]",
+          "explanation": "There is extra spacing between `ref` and `verso`, and between `verso` and the bracket. This is likely an issue with the markup.",
+          "line": 24,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "$`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.",
+          "explanation": "\"on the right to the right\" is redundant. One \"to the right\" should be removed.",
+          "line": 32,
+          "confidence": 95,
+          "severity": "high"
+        },
+        {
+          "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i`",
+          "explanation": "There's an inconsistency in the exponent for `2^(n-1)`. Some places use `2^(n-1)` while others use `2^{n-1}`.",
+          "line": 53,
+          "confidence": 80,
+          "severity": "medium"
+        },
+        {
+          "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "It likely meant to compare `H_n(i)` with `H_n(i + 1)` rather than `H_i(i + 1)`.",
+          "line": 74,
+          "confidence": 90,
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "trial": 3,
+      "issues_found": 7,
+      "issues": [
+        {
+          "text": "square $`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+          "explanation": "Missing period at the end of the sentence.",
+          "line": 7,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "Holder continuity",
+          "explanation": "\"Holder\" should be capitalized as it refers to \"H\u00f6lder continuity\", named after Otto H\u00f6lder.",
+          "line": 12,
+          "confidence": 80,
+          "severity": "low"
+        },
+        {
+          "text": "definitions",
+          "explanation": "Missing period at the end of the sentence.",
+          "line": 28,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "$`(0,0)`",
+          "explanation": "There should be a comma after \"0)\" as \"starting at (0,0)\" refers to a point, not a single value.",
+          "line": 32,
+          "confidence": 85,
+          "severity": "low"
+        },
+        {
+          "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) `",
+          "explanation": "The second exponent for 2 in the last term (2^(n-1)) should be 2(n-1), not 2^(n-1).",
+          "line": 53,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "The variable `H_i` should likely be `H_n` to maintain consistency with the surrounding text and the context of comparing the same Hilbert curve at different indices.",
+          "line": 74,
+          "confidence": 80,
+          "severity": "medium"
+        },
+        {
+          "text": "perspective:",
+          "explanation": "Missing period at the end of the sentence.",
+          "line": 99,
+          "confidence": 90,
+          "severity": "low"
+        }
+      ]
+    },
+    {
+      "trial": 4,
+      "issues_found": 1,
+      "issues": [
+        {
+          "text": "(H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`",
+          "explanation": "\"H_i\" should be \"H_n\" for consistency with the rest of the formula.",
+          "line": 73,
+          "confidence": 90,
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "trial": 5,
+      "issues_found": 10,
+      "issues": [
+        {
+          "text": "Holder continuity, computability, partial invertibility, etc.",
+          "explanation": "Missing a period at the end of the sentence.",
+          "line": 12,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "properties are succinct through drawings rather than just the definitions.",
+          "explanation": "\"succinct\" is not the best word choice here. Perhaps \"best conveyed\" or \"most clearly understood\".",
+          "line": 28,
+          "confidence": 70,
+          "severity": "low"
+        },
+        {
+          "text": "$`(2^{n-1}, 0)`.",
+          "explanation": "Punctuation inside the math environment. The period should be outside.",
+          "line": 32,
+          "confidence": 90,
+          "severity": "high"
+        },
+        {
+          "text": "$`(0, 0)`.",
+          "explanation": "Punctuation inside the math environment. The period should be outside.",
+          "line": 47,
+          "confidence": 90,
+          "severity": "high"
+        },
+        {
+          "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i`",
+          "explanation": "There appears to be a typo in the exponent: `2^(n-1)` after the 3 should likely be `2(n-1)`.",
+          "line": 53,
+          "confidence": 80,
+          "severity": "high"
+        },
+        {
+          "text": "$`swap((m, n)) = (n, m)`.",
+          "explanation": "Punctuation inside the math environment. The period should be outside.",
+          "line": 55,
+          "confidence": 90,
+          "severity": "high"
+        },
+        {
+          "text": "From the picture, it's also obvious that no two entries go to the same square on the grid.",
+          "explanation": "Grammatical error. \"no two entries go to the same square\" should be \"no two entries map to the same square\" or \"no two entries occupy the same square\".",
+          "line": 56,
+          "confidence": 80,
+          "severity": "medium"
+        },
+        {
+          "text": "$`\\mathbb{R} \\to \\mathbb{R}`, then we reparameterize the curve to go from $`[0, 1]` instead of $`[0, 2^{2n})`, and finally we scale down the output by $`\\frac{1}{2^n}` so it fits in $`[0, 1] \\times [0, 1]`.",
+          "explanation": "Needs to be specific about the range of the function. Is it `(\\mathbb{R} \\to \\mathbb{R}) \\times (\\mathbb{R} \\to \\mathbb{R})` or `\\mathbb{R} \\to (\\mathbb{R} \\times \\mathbb{R})`",
+          "line": 62,
+          "confidence": 70,
+          "severity": "medium"
+        },
+        {
+          "text": "$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`",
+          "explanation": "Typo: `H_i` should likely be `H_n`.",
+          "line": 71,
+          "confidence": 95,
+          "severity": "high"
+        },
+        {
+          "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "Typo: `H_i` should likely be `H_n`.",
+          "line": 74,
+          "confidence": 95,
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "trial": 6,
+      "issues_found": 6,
+      "issues": [
+        {
+          "text": "recursively",
+          "explanation": "Missing a comma after \"recursively\" as it introduces a list.",
+          "line": 47,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) `",
+          "explanation": "There is a typo in the exponent. It should likely be `2(n-1)` or `2*(n-1)` instead of `2^(n-1)`. Given the surrounding context, `2(n-1)` is more consistent.",
+          "line": 53,
+          "confidence": 90,
+          "severity": "high"
+        },
+        {
+          "text": "$`\\mathbb{R} \\to \\mathbb{R}`",
+          "explanation": "This function signature seems incorrect for a 2D curve. It should likely be $`\\mathbb{R} \\to \\mathbb{R}^2` or $`\\mathbb{R} \\to \\mathbb{R} \\times \\mathbb{R}` to represent a curve in a 2D space.",
+          "line": 63,
+          "confidence": 85,
+          "severity": "medium"
+        },
+        {
+          "text": "$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`",
+          "explanation": "There appears to be a typo here. Given the surrounding equations, it should likely be $`H_n(...)` instead of $`H_i(...)`.",
+          "line": 73,
+          "confidence": 95,
+          "severity": "high"
+        },
+        {
+          "text": "$`H_i(i + 1)`",
+          "explanation": "There appears to be a typo here. Given the surrounding context, it should likely be $`H_n(i + 1)` instead of $`H_i(i + 1)`.",
+          "line": 74,
+          "confidence": 95,
+          "severity": "high"
+        },
+        {
+          "text": "`--$`H_n(i)`",
+          "explanation": "The em dash `--` is not standard for separating clauses like this. A single em dash `\u2014` or a comma would be more appropriate.",
+          "line": 74,
+          "confidence": 80,
+          "severity": "low"
+        }
+      ]
+    },
+    {
+      "trial": 7,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 8,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 9,
+      "issues_found": 1,
+      "issues": [
+        {
+          "text": "2^(n-1)",
+          "explanation": "Missing closing parenthesis in exponent",
+          "line": 53,
+          "confidence": 60,
+          "severity": "medium"
+        }
+      ]
+    },
+    {
+      "trial": 10,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 11,
+      "issues_found": 5,
+      "issues": [
+        {
+          "text": "2^(n-1)",
+          "explanation": "Missing asterisk for multiplication",
+          "line": 53,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "2^(n-1)",
+          "explanation": "Missing asterisk for multiplication",
+          "line": 53,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "2^(n-1)",
+          "explanation": "Missing asterisk for multiplication",
+          "line": 53,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "H_i",
+          "explanation": "Inconsistent notation from H_n",
+          "line": 73,
+          "confidence": 80,
+          "severity": "low"
+        },
+        {
+          "text": "H_i",
+          "explanation": "Inconsistent notation from H_n",
+          "line": 74,
+          "confidence": 80,
+          "severity": "low"
+        }
+      ]
+    },
+    {
+      "trial": 12,
+      "issues_found": 4,
+      "issues": [
+        {
+          "text": "square $`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis",
+          "explanation": "Missing space after the closing backtick.",
+          "line": 7,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+          "explanation": "There appears to be a typo in the second exponent. It should likely be 2^{(n-1)} or 2^(2(n-1)). The current form with 2^(2^(n-1)) is unusual and potentially incorrect in this context.",
+          "line": 53,
+          "confidence": 80,
+          "severity": "high"
+        },
+        {
+          "text": "H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)",
+          "explanation": "It seems like H_i should be H_n in this context for consistency with the rest of the formula.",
+          "line": 74,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "H_i(i + 1)",
+          "explanation": "Similar to line 73, H_i should likely be H_n. Also, 'i' is used here without clear definition; it should probably be 'n' to refer to the iteration number, or perhaps a variable representing the input to H_n. Given the previous clause used H_n(i), it's likely meant to be H_n(i+1) with 'i' referring to the argument of the function H_n.",
+          "line": 74,
+          "confidence": 80,
+          "severity": "medium"
+        }
+      ]
+    },
+    {
+      "trial": 13,
+      "issues_found": 6,
+      "issues": [
+        {
+          "text": "square $`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+          "explanation": "Missing period at the end of the sentence.",
+          "line": 7,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "I'll present some of my formalization below using Verso, Lean's new HTML generation tool. More importantly, I'll also tell you about the other interesting facts you learn by thinking hard about every detail while coding a formalization, such as Holder continuity, computability, partial invertibility, etc. Despite disappointing AI provers, promising inline visualizations with ProofWidgets, and our lovely library of math `mathlib`, the challenging gaps left by spatial intuition leave a lot of gnarly induction, casework, and algebra, along with some confusing remnants from `mathlib` and casting obligations.",
+          "explanation": "\"Holder continuity\" should likely be \"H\u00f6lder continuity\" (with an umlaut over the o) if referring to the mathematical concept.",
+          "line": 12,
+          "confidence": 70,
+          "severity": "low"
+        },
+        {
+          "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i",
+          "explanation": "There's an inconsistency: `H_n` is used here instead of `H_{n-1}` as in the other cases. Given the recursive nature, it is highly likely that this should be `H_{n-1}`.",
+          "line": 53,
+          "confidence": 85,
+          "severity": "high"
+        },
+        {
+          "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i",
+          "explanation": "There is an extra caret (^) in `2^{2^(n-1)}`, which likely should be `2^{2(n-1)}` for consistency with the other lines in the definition.",
+          "line": 53,
+          "confidence": 90,
+          "severity": "high"
+        },
+        {
+          "text": "From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "There appears to be a typo: \"$`H_i(i + 1)`\" should likely be \"$`H_n(i + 1)`\" for consistency with the previous part of the sentence.",
+          "line": 74,
+          "confidence": 80,
+          "severity": "medium"
+        },
+        {
+          "text": "Unfortunately, our picture is somewhat less interesting from a visual perspective, but more interesting from a mathematical perspective:",
+          "explanation": "Missing period at the end of the sentence.",
+          "line": 99,
+          "confidence": 90,
+          "severity": "low"
+        }
+      ]
+    },
+    {
+      "trial": 14,
+      "issues_found": 3,
+      "issues": [
+        {
+          "text": "Holder",
+          "explanation": "spelling error",
+          "line": 12,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "2^(n-1)}",
+          "explanation": "Missing backtick before '^'. The expression looks like it's trying to be part of a LaTeX math environment.",
+          "line": 53,
+          "confidence": 80,
+          "severity": "medium"
+        },
+        {
+          "text": "2^(n-1)}))",
+          "explanation": "Missing backtick before '^'. The expression looks like it's trying to be part of a LaTeX math environment.",
+          "line": 53,
+          "confidence": 80,
+          "severity": "medium"
+        }
+      ]
+    },
+    {
+      "trial": 15,
+      "issues_found": 4,
+      "issues": [
+        {
+          "text": "Holder continuity",
+          "explanation": "\"Holder\" should be \"H\u00f6lden\", \"Hoelder\", or \"H\u00f6lder\".",
+          "line": 12,
+          "confidence": 80,
+          "severity": "medium"
+        },
+        {
+          "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+          "explanation": "There appears to be a typo in the exponent. It should likely be 2(n-1) instead of 2^(n-1).",
+          "line": 53,
+          "confidence": 90,
+          "severity": "high"
+        },
+        {
+          "text": "H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)",
+          "explanation": "\"H_i\" should be \"H_n\" for consistency with the rest of the equation and the definition of the normalized Hilbert curve.",
+          "line": 73,
+          "confidence": 95,
+          "severity": "high"
+        },
+        {
+          "text": "H_n(i+1)",
+          "explanation": "This should probably be H_n(i + 1). There is a missing space.",
+          "line": 74,
+          "confidence": 80,
+          "severity": "low"
+        }
+      ]
+    },
+    {
+      "trial": 16,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 17,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 18,
+      "issues_found": 8,
+      "issues": [
+        {
+          "text": "Holder",
+          "explanation": "spelling error",
+          "line": 12,
+          "confidence": 95,
+          "severity": "high"
+        },
+        {
+          "text": "partial invertibility",
+          "explanation": "missing comma",
+          "line": 12,
+          "confidence": 70,
+          "severity": "low"
+        },
+        {
+          "text": "definitions. All of the necessary proofs will be delayed to the next section.",
+          "explanation": "The second sentence seems to be a run-on sentence. It could be clearer if it was split into two sentences or rephrased.",
+          "line": 28,
+          "confidence": 60,
+          "severity": "low"
+        },
+        {
+          "text": "$`(0,0)`",
+          "explanation": "missing space",
+          "line": 32,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "$`(2^{n-1}, 0)`.",
+          "explanation": "missing space",
+          "line": 32,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "$` (2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) `",
+          "explanation": "The equation segment seems to be incomplete as a ')' is missing",
+          "line": 53,
+          "confidence": 70,
+          "severity": "medium"
+        },
+        {
+          "text": "$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`",
+          "explanation": "Potential typo. Should it be H_n instead of H_i?",
+          "line": 73,
+          "confidence": 60,
+          "severity": "low"
+        },
+        {
+          "text": "$`H_i(i + 1)`",
+          "explanation": "This appears to be a typo. It should probably be H_n as used in the adjacent text",
+          "line": 74,
+          "confidence": 70,
+          "severity": "medium"
+        }
+      ]
+    },
+    {
+      "trial": 19,
+      "issues_found": 1,
+      "issues": [
+        {
+          "text": "H_i",
+          "explanation": "It looks like 'H_i' should be 'H_n'",
+          "line": 73,
+          "confidence": 60,
+          "severity": "low"
+        }
+      ]
+    },
+    {
+      "trial": 20,
+      "issues_found": 3,
+      "issues": [
+        {
+          "text": "2^(n-1) - 1",
+          "explanation": "Missing caret in exponentiation notation for LaTeX. Should be 2^{n-1}.",
+          "line": 53,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "2^(n-1)",
+          "explanation": "Missing caret in exponentiation notation for LaTeX. Should be 2^{n-1}.",
+          "line": 53,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "H_i(i + 1)",
+          "explanation": "Likely a typo. Given the context of H_n(i), this probably should be H_n(i + 1).",
+          "line": 74,
+          "confidence": 80,
+          "severity": "low"
+        }
+      ]
+    },
+    {
+      "trial": 21,
+      "issues_found": 1,
+      "issues": [
+        {
+          "text": "2^(n-1)}))",
+          "explanation": "Missing caret for exponentiation",
+          "line": 53,
+          "confidence": 90,
+          "severity": "medium"
+        }
+      ]
+    },
+    {
+      "trial": 22,
+      "issues_found": 1,
+      "issues": [
+        {
+          "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "Typo: should be $`H_n(i+1)` instead of $`H_i(i+1)`. The index `i` is probably a typo and should be `n` to match the surrounding text for the `n`-th Hilbert curve.",
+          "line": 74,
+          "confidence": 95,
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "trial": 23,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 24,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 25,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 26,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 27,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 28,
+      "issues_found": 1,
+      "issues": [
+        {
+          "text": "2^(n-1)",
+          "explanation": "Missing closing parenthesis in exponent",
+          "line": 53,
+          "confidence": 95,
+          "severity": "medium"
+        }
+      ]
+    },
+    {
+      "trial": 29,
+      "issues_found": 9,
+      "issues": [
+        {
+          "text": "square $`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+          "explanation": "Missing period at the end of the sentence.",
+          "line": 7,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "I'll present some of my formalization below using Verso, Lean's new HTML generation tool. More importantly, I'll also tell you about the other interesting facts you learn by thinking hard about every detail while coding a formalization, such as Holder continuity, computability, partial invertibility, etc. Despite disappointing AI provers, promising inline visualizations with ProofWidgets, and our lovely library of math `mathlib`, the challenging gaps left by spatial intuition leave a lot of gnarly induction, casework, and algebra, along with some confusing remnants from `mathlib` and casting obligations.",
+          "explanation": "\"Holder continuity\" should be \"H\u00f6lder continuity\" (mathematical proper noun).",
+          "line": 12,
+          "confidence": 80,
+          "severity": "low"
+        },
+        {
+          "text": "I'll present some of my formalization below using Verso, Lean's new HTML generation tool. More importantly, I'll also tell you about the other interesting facts you learn by thinking hard about every detail while coding a formalization, such as Holder continuity, computability, partial invertibility, etc. Despite disappointing AI provers, promising inline visualizations with ProofWidgets, and our lovely library of math `mathlib`, the challenging gaps left by spatial intuition leave a lot of gnarly induction, casework, and algebra, along with some confusing remnants from `mathlib` and casting obligations.",
+          "explanation": "\"AI provers\" should likely be \"AI-provers\" (compound adjective before a noun).",
+          "line": 12,
+          "confidence": 70,
+          "severity": "low"
+        },
+        {
+          "text": "First, we're going to go through the informal definitions, which is really all you need to be able to plot and visualize them. Unlike most mathematical objects, their properties are succinct through drawings rather than just the definitions. All of the necessary proofs will be delayed to the next section.",
+          "explanation": "\"properties are succinct through drawings\" could be phrased more clearly, e.g., \"properties are succinctly conveyed through drawings\" or \"properties are best illustrated through drawings.\"",
+          "line": 28,
+          "confidence": 60,
+          "severity": "low"
+        },
+        {
+          "text": "**Informal Definition**: The 0th Hilbert curve is the constant $`(0, 0)`. To construct the $`n`th Hilbert curve, take 4 copies of the $`n-1`th Hilbert curve and stitch them together. By hypothesis, we'll depict the curve for the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.",
+          "explanation": "Redundant \"to the right\". Should be \"ending on the right at\".",
+          "line": 32,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i",
+          "explanation": "Typo in the exponent: \"2^(n-1)\" should likely be \"2^{n-1}\" for consistency with other LaTeX math. Also, the term $`H_n` might be a typo, it should probably be $`H_{n-1}` given the other parts of the recursive definition.",
+          "line": 53,
+          "confidence": 85,
+          "severity": "high"
+        },
+        {
+          "text": "From the picture, it's also obvious that no two entries go to the same square on the grid.",
+          "explanation": "\"no two entries go to the same square\" could be \"no two entries map to the same square\" or \"no two entries occupy the same square\" for more precise mathematical language.",
+          "line": 57,
+          "confidence": 70,
+          "severity": "low"
+        },
+        {
+          "text": "**Informal Definition**: We interpolate the $n$th Hilbert curve to get a curve $`\\mathbb{R} \\to \\mathbb{R}`, then we reparameterize the curve to go from $`[0, 1]` instead of $`[0, 2^{2n})`, and finally we scale down the output by $`\\frac{1}{2^n}` so it fits in $`[0, 1] \\times [0, 1]`.",
+          "explanation": "The mapping $`\\mathbb{R} \\to \\mathbb{R}` seems incorrect here; it should probably be $`[0, 2^{2n}) \\to \\mathbb{R}^2` to match the output for the integer version and the goal of fitting in $`[0,1] \\times [0,1]$.",
+          "line": 63,
+          "confidence": 85,
+          "severity": "high"
+        },
+        {
+          "text": "From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "Typo: \"$`H_i(i + 1)`\" should likely be \"$`H_n(i+1)`\".",
+          "line": 74,
+          "confidence": 95,
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "trial": 30,
+      "issues_found": 1,
+      "issues": [
+        {
+          "text": "Holder",
+          "explanation": "spelling error",
+          "line": 12,
+          "confidence": 95,
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "trial": 31,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 32,
+      "issues_found": 4,
+      "issues": [
+        {
+          "text": "square $`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+          "explanation": "Missing space after ']`'.",
+          "line": 7,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+          "explanation": "The term 2^(n-1) is enclosed in parentheses in the first instance, but not in the second instance later in the equation. This may be a copy-paste error where (n-1) should have been 2(n-1), or 2(n-1) could appear elsewhere in the equation as plain text. Or, it could be fully correct math but seems odd.",
+          "line": 53,
+          "confidence": 65,
+          "severity": "low"
+        },
+        {
+          "text": "$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`",
+          "explanation": "H_i should be H_n.",
+          "line": 73,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "H_i should be H_n.",
+          "line": 74,
+          "confidence": 90,
+          "severity": "medium"
+        }
+      ]
+    },
+    {
+      "trial": 33,
+      "issues_found": 6,
+      "issues": [
+        {
+          "text": "[0, 1]`.",
+          "explanation": "Missing closing backtick for inline math.",
+          "line": 7,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "$`(2^{n-1}, 0)`.",
+          "explanation": "Missing closing backtick for inline math.",
+          "line": 32,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i",
+          "explanation": "There appears to be a typo where `H_n` should be `H_{n-1}` and also `2^(n-1)` should be `2(n-1)`.",
+          "line": 53,
+          "confidence": 70,
+          "severity": "high"
+        },
+        {
+          "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i",
+          "explanation": "Missing a closing dollar sign to terminate the inline math environment.",
+          "line": 53,
+          "confidence": 95,
+          "severity": "high"
+        },
+        {
+          "text": "$`\\mathbb{R} \\to \\mathbb{R}`, then we reparameterize the curve to go from $`[0, 1]` instead of $`[0, 2^{2n})`, and finally we scale down the output by $`\\frac{1}{2^n}` so it fits in $`[0, 1] \\times [0, 1]`.",
+          "explanation": "There are missing backticks around mathmode text in this line. Additionally, the first `\\mathbb{R} \\to \\mathbb{R}` should probably be `\\mathbb{R} \\to \\mathbb{R}^2` or something similar for a 2D curve.",
+          "line": 63,
+          "confidence": 85,
+          "severity": "high"
+        },
+        {
+          "text": "$`H_i(i + 1)`.",
+          "explanation": "It seems that $`H_i` should be $`H_n` here.",
+          "line": 74,
+          "confidence": 75,
+          "severity": "medium"
+        }
+      ]
+    },
+    {
+      "trial": 34,
+      "issues_found": 6,
+      "issues": [
+        {
+          "text": "$`\\LaTeX` instead of $\\LaTeX$",
+          "explanation": "The first LaTeX instance is missing a closing backtick and the second is missing the opening backtick.",
+          "line": 1,
+          "confidence": 95,
+          "severity": "medium"
+        },
+        {
+          "text": "$`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+          "explanation": "The sentence uses \"$`[0, 1] \\times [0, 1]`.\" to end the sentence, but the period is outside the mathematical notation. It should probably be \"$`[0, 1] \\times [0, 1]`. \" to be clear or if the sentence ending punctuation is outside the LaTeX then the end of the sentence should be \"$`[0, 1] \\times [0, 1]`. \"",
+          "line": 7,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+          "explanation": "Missing a comma before \"so\" in \"Formalizing Hilbert Curves in Lean\".",
+          "line": 12,
+          "confidence": 80,
+          "severity": "low"
+        },
+        {
+          "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i`",
+          "explanation": "There appears to be a typo at the end of the line: `2^(n-1)}))`. It should probably be `2^{2(n-1)}))`.",
+          "line": 53,
+          "confidence": 85,
+          "severity": "high"
+        },
+        {
+          "text": "From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "The `i` in \"$`H_i(i + 1)`\" seems to be a typo. It should probably be `n` as in \"$`H_n(i + 1)`\".",
+          "line": 73,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "It's likely that a comma is missing after \"furthermore\" in \"From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much\".",
+          "line": 73,
+          "confidence": 75,
+          "severity": "low"
+        }
+      ]
+    },
+    {
+      "trial": 35,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 36,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 37,
+      "issues_found": 8,
+      "issues": [
+        {
+          "text": "$`\\LaTeX`",
+          "explanation": "Typo. Should be $\\LaTeX$. The dollar signs are usually outside the backticks when using LaTeX in Markdown.",
+          "line": 1,
+          "confidence": 80,
+          "severity": "low"
+        },
+        {
+          "text": "$`[0, 1] \\times [0, 1]`.",
+          "explanation": "Punctuation inside the math environment. The period should be outside the backticks.",
+          "line": 7,
+          "confidence": 80,
+          "severity": "low"
+        },
+        {
+          "text": "$`(2^{n-1}, 0)`.",
+          "explanation": "Punctuation inside the math environment. The period should be outside the backticks.",
+          "line": 32,
+          "confidence": 80,
+          "severity": "low"
+        },
+        {
+          "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i`",
+          "explanation": "Inconsistent math notation: `2^(n-1)` should likely be `2^{n-1}` for consistency and clarity. There is also `H_n` which should probably be `H_{n-1}` for consistency with the other lines in the cases.",
+          "line": 53,
+          "confidence": 70,
+          "severity": "medium"
+        },
+        {
+          "text": "`swap((m, n)) = (n, m)`.",
+          "explanation": "Punctuation inside the math environment. The period should be outside the backticks.",
+          "line": 55,
+          "confidence": 80,
+          "severity": "low"
+        },
+        {
+          "text": "$`[0, 2^n) \\times [0, 2^n)`.",
+          "explanation": "Punctuation inside the math environment. The period should be outside the backticks.",
+          "line": 57,
+          "confidence": 80,
+          "severity": "low"
+        },
+        {
+          "text": "$`\\mathbb{R} \\to \\mathbb{R}`,",
+          "explanation": "Punctuation inside the math environment. The comma should be outside the backticks.",
+          "line": 63,
+          "confidence": 80,
+          "severity": "low"
+        },
+        {
+          "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "Typo: $`H_i(i + 1)` should likely be $`H_n(i + 1)` for consistency with the rest of the sentence.",
+          "line": 74,
+          "confidence": 90,
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "trial": 38,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 39,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 40,
+      "issues_found": 1,
+      "issues": [
+        {
+          "text": "Holder continuity",
+          "explanation": "spelling error",
+          "line": 12,
+          "confidence": 90,
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "trial": 41,
+      "issues_found": 7,
+      "issues": [
+        {
+          "text": "$`\\LaTeX` instead of $\\LaTeX$",
+          "explanation": "The second LaTeX instance uses inline math-mode delimiters rather than the backtick variant in the first LaTeX instance. They should be consistent.",
+          "line": 1,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "$`[0, 1] \\times [0, 1]`",
+          "explanation": "The backtick notation $`...`$ is used for inline math. However, the closing backtick for the first math block is missing.",
+          "line": 7,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "to become confused.\" -- Matt Iverson's friend from high school",
+          "explanation": "The quotation mark should be placed before the em dash, not after.",
+          "line": 7,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "Holder continuity",
+          "explanation": "\"Holder\" should be capitalized (H\u00f6lder continuity).",
+          "line": 12,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "$`(0,0)` and ending on the right to the right",
+          "explanation": "\"to the right\" is repeated.",
+          "line": 32,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "$`(2^n - 1, 2^(n-1) - 1)`",
+          "explanation": "There's an inconsistency in formatting. It should be $`2^{n-1}` rather than $`2^(n-1)`",
+          "line": 53,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`",
+          "explanation": "The subscript 'i' should likely be 'n' to be consistent with the rest of the formula and the definition of $\\tilde{H}_n(t)$.",
+          "line": 73,
+          "confidence": 90,
+          "severity": "medium"
+        }
+      ]
+    },
+    {
+      "trial": 42,
+      "issues_found": 3,
+      "issues": [
+        {
+          "text": "Holder continuity",
+          "explanation": "\"Holder\" should be \"H\u00f6lder\" or \"Hoelder\". Given the context of mathematical concepts, the diacritical mark is generally preferred or a common transliteration that reflects the original spelling.",
+          "line": 12,
+          "confidence": 80,
+          "severity": "medium"
+        },
+        {
+          "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+          "explanation": "There appears to be a typo in the exponentiation. It's likely `2^{2(n-1)}` instead of `2^(n-1)` to be consistent with the other terms in the expression.",
+          "line": 53,
+          "confidence": 70,
+          "severity": "high"
+        },
+        {
+          "text": "H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`",
+          "explanation": "The second `H_i` should likely be `H_n` for consistency with the rest of the formula and the definition of `H_n`.",
+          "line": 73,
+          "confidence": 90,
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "trial": 43,
+      "issues_found": 5,
+      "issues": [
+        {
+          "text": "$`\\LaTeX`",
+          "explanation": "Typo in LaTeX command; should not be `$`",
+          "line": 1,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "$`[0, 1] \\times [0, 1]`.",
+          "explanation": "Missing period inside the math environment.",
+          "line": 7,
+          "confidence": 80,
+          "severity": "low"
+        },
+        {
+          "text": "$`(2^{n-1}, 0)`.",
+          "explanation": "Missing period inside the math environment.",
+          "line": 32,
+          "confidence": 80,
+          "severity": "low"
+        },
+        {
+          "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) `",
+          "explanation": "The `H_n` should likely be `H_{n-1}` given the pattern in the preceding lines.",
+          "line": 53,
+          "confidence": 70,
+          "severity": "medium"
+        },
+        {
+          "text": "$`[0, 2^n) \\times [0, 2^n)`.",
+          "explanation": "Missing period inside the math environment.",
+          "line": 57,
+          "confidence": 80,
+          "severity": "low"
+        }
+      ]
+    },
+    {
+      "trial": 44,
+      "issues_found": 9,
+      "issues": [
+        {
+          "text": "square $`[0, 1] \\times [0, 1]`. To",
+          "explanation": "Missing period at the end of the sentence.",
+          "line": 7,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+          "explanation": "The word \"given\" should be followed by a comma here.",
+          "line": 7,
+          "confidence": 80,
+          "severity": "low"
+        },
+        {
+          "text": "Holder continuity",
+          "explanation": "\"Holder\" should be capitalized as it's typically \"H\u00f6lder continuity\" or \"Holder continuity\" with proper noun capitalization.",
+          "line": 12,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "`mathlib`, the challenging gaps left by spatial intuition leave a lot of gnarly induction, casework, and algebra, along with some confusing remnants from `mathlib` and casting obligations.",
+          "explanation": "The sentence structure could be improved. \"leave a lot of gnarly induction, casework, and algebra\" feels a bit clunky. Perhaps \"necessitate a lot of gnarly induction...\" or \"result in a lot of gnarly induction...\"",
+          "line": 12,
+          "confidence": 70,
+          "severity": "medium"
+        },
+        {
+          "text": "properties are succinct through drawings rather than just the definitions.",
+          "explanation": "\"succinct through drawings\" is a bit awkward. Perhaps \"best understood through drawings\" or \"more succinctly captured by drawings.\"",
+          "line": 28,
+          "confidence": 85,
+          "severity": "medium"
+        },
+        {
+          "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+          "explanation": "Typo. It should likely be `H_{n-1}` instead of `H_n` in the last case to maintain consistency with the recursive definition of `H_n(i)` based on `H_{n-1}`.",
+          "line": 53,
+          "confidence": 95,
+          "severity": "high"
+        },
+        {
+          "text": "(2^n - 1, 2^(n-1) - 1)",
+          "explanation": "There appears to be a typo here. Given the other terms, it's likely `(2^n - 1, 2^n - 1)` or `(2^n - 1, (2^n - 1) - (2^{n-1}))` to maintain the square's bounds and symmetry. The `- 1` on the second coordinate looks mismatched with `2^n - 1` on the first coordinate.",
+          "line": 53,
+          "confidence": 80,
+          "severity": "high"
+        },
+        {
+          "text": "curve $`\\mathbb{R} \\to \\mathbb{R}`, then",
+          "explanation": "The range of the curve should likely be $\\mathbb{R}^2$ rather than $\\mathbb{R}$ since it maps to 2D coordinates.",
+          "line": 61,
+          "confidence": 90,
+          "severity": "high"
+        },
+        {
+          "text": "From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "Typo: \"$`H_i(i + 1)`\" should likely be \"$`H_n(i + 1)`\" as `i` is the index for `H_n`.",
+          "line": 74,
+          "confidence": 95,
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "trial": 45,
+      "issues_found": 2,
+      "issues": [
+        {
+          "text": "2^(n-1)",
+          "explanation": "Missing asterisk for exponentiation in LaTeX",
+          "line": 53,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "H_i(i + 1)",
+          "explanation": "Inconsistent variable use; likely intended to be H_n(i + 1) to match the preceding H_n(i).",
+          "line": 74,
+          "confidence": 70,
+          "severity": "medium"
+        }
+      ]
+    },
+    {
+      "trial": 46,
+      "issues_found": 3,
+      "issues": [
+        {
+          "text": "2^(n-1)",
+          "explanation": "Missing parenthesis in exponent. Should be `2^(n-1)`.",
+          "line": 53,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "2^(n-1))",
+          "explanation": "Missing parenthesis in exponent. Should be `2^(n-1)`.",
+          "line": 53,
+          "confidence": 90,
+          "severity": "medium"
+        },
+        {
+          "text": "H_i",
+          "explanation": "Typo. Should be H_n, based on context elsewhere as well as the prior line on what was defined as a function.",
+          "line": 74,
+          "confidence": 80,
+          "severity": "medium"
+        }
+      ]
+    },
+    {
+      "trial": 47,
+      "issues_found": 3,
+      "issues": [
+        {
+          "text": "square $`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+          "explanation": "Missing period at the end of the sentence.",
+          "line": 7,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+          "explanation": "There appears to be a typo where \"H_n\" should likely be \"H_{n-1}\" to align with the pattern of the other cases in the piecewise function.",
+          "line": 53,
+          "confidence": 70,
+          "severity": "high"
+        },
+        {
+          "text": "From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "Typo in `H_i(i + 1)`. Based on the context and previous definitions, this should likely be `H_n(i + 1)`.",
+          "line": 74,
+          "confidence": 85,
+          "severity": "high"
+        }
+      ]
+    },
+    {
+      "trial": 48,
+      "issues_found": 5,
+      "issues": [
+        {
+          "text": "square $`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+          "explanation": "Missing period at the end of the sentence.",
+          "line": 7,
+          "confidence": 90,
+          "severity": "low"
+        },
+        {
+          "text": "I'll present some of my formalization below using Verso, Lean's new HTML generation tool. More importantly, I'll also tell you about the other interesting facts you learn by thinking hard about every detail while coding a formalization, such as Holder continuity, computability, partial invertibility, etc. Despite disappointing AI provers, promising inline visualizations with ProofWidgets, and our lovely library of math `mathlib`, the challenging gaps left by spatial intuition leave a lot of gnarly induction, casework, and algebra, along with some confusing remnants from `mathlib` and casting obligations.",
+          "explanation": "\"Holder continuity\" should likely be \"H\u00f6lder continuity\" to follow standard mathematical notation.",
+          "line": 12,
+          "confidence": 70,
+          "severity": "medium"
+        },
+        {
+          "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i",
+          "explanation": "There is a typo in the exponent: \"2^(n-1)\" should likely be \"2(n-1)\" for consistency with the other terms in the case.",
+          "line": 53,
+          "confidence": 90,
+          "severity": "high"
+        },
+        {
+          "text": "From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "\"H_n(i+1)\" should likely be used here.",
+          "line": 73,
+          "confidence": 85,
+          "severity": "medium"
+        },
+        {
+          "text": "From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+          "explanation": "The use of \"furthermore\" (rather than \"further\") might be considered slightly informal for a technical description, though it is not strictly incorrect.",
+          "line": 73,
+          "confidence": 60,
+          "severity": "low"
+        }
+      ]
+    },
+    {
+      "trial": 49,
+      "issues_found": 0,
+      "issues": []
+    },
+    {
+      "trial": 50,
+      "issues_found": 0,
+      "issues": []
+    }
+  ]
+}

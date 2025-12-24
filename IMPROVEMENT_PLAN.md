@@ -2,6 +2,26 @@
 
 This is a focused, actionable plan based on user feedback and priorities.
 
+## Status Tracking
+
+**Completed:**
+- ✅ Phase 2.1: Created pyproject.toml with modern package structure
+- ✅ Phase 2.1: Migrated to src/ layout (src/editing_with_llms/)
+- ✅ Phase 2.1: Entry point CLI command (`writing-buddy`)
+- ✅ Phase 2.1: Moved tests to tests/ directory
+- ✅ Testing: Tested proselint, pyspellchecker, language-tool-python on real docs
+- ✅ Testing: Updated test suite with synonym-based assertions
+
+**In Progress:**
+- 🔄 Phase 0: Need to create test_strategies.py for input/output testing
+
+**Not Started:**
+- ⏳ Phase 1: Config file, compiler output, line number references
+- ⏳ Phase 2.2-2.3: Full modular architecture, terminal output
+- ⏳ Phase 3: Hybrid checking, format-aware preprocessing
+
+---
+
 ## Core Philosophy
 - Point out errors and problems, rarely if ever make suggestions
 - Let the writer's voice come through
@@ -54,7 +74,7 @@ bachelors-reader:
   model: gpt-4o
 ```
 
-Usage: `python llm_typo_checker.py bachelors-reader test.md`
+Usage: `writing-buddy bachelors-reader test.md`
 
 ### 1.2 Compiler-Style Output
 Basic output format:
@@ -73,12 +93,15 @@ Based on Phase 0 testing results:
 
 ## Phase 2: Proper Package Structure (High Impact, Medium Effort)
 
-### 2.1 Move to pyproject.toml
-Set up modern Python package:
-- Use `uv` or standard `pyproject.toml`
-- Define dependencies: `click`, `llm`, `proselint`, `language-tool-python`, etc.
-- Proper package structure
-- Entry point for CLI
+### 2.1 Move to pyproject.toml ✅ COMPLETED
+Modern Python package setup:
+- ✅ Created pyproject.toml with dependencies
+- ✅ Core deps: `click`, `llm`, `pyyaml`
+- ✅ Optional deps: `proselint` (local-checks group)
+- ✅ Dev deps: `pytest`, `pytest-cov`
+- ✅ Migrated to src/editing_with_llms/ layout
+- ✅ Entry point: `writing-buddy` CLI command
+- ✅ Tests moved to tests/ directory
 
 ### 2.2 Modular Architecture
 ```

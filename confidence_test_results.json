@@ -1,0 +1,2590 @@
+{
+  "results": [
+    {
+      "input_strategy": "Arrow",
+      "output_strategy": "Structured",
+      "confidence_levels": "4-level",
+      "num_trials": 10,
+      "mean_issues": 5,
+      "stdev_issues": 9.333333333333334,
+      "min_issues": 0,
+      "max_issues": 31,
+      "trials": [
+        {
+          "trial": 1,
+          "response": "LINE: 74\nTEXT: $`H_i(i + 1)`.\nISSUE: Typo: should be $`H_n(i+1)`. (index `i` is for `i`th term, $`H_n` should be for `n`th iteration)\nCONFIDENCE: likely\nSEVERITY: medium",
+          "issues_found": 1,
+          "issues": [
+            {
+              "text": "$`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "Typo: should be $`H_n(i+1)`. (index `i` is for `i`th term, $`H_n` should be for `n`th iteration)",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 2,
+          "response": "LINE: 7\nTEXT: $`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.\nISSUE: Missing period at the end of the first sentence.\nCONFIDENCE: very likely\nSEVERITY: low\n\nLINE: 12\nTEXT: Despite disappointing AI provers, promising inline visualizations with ProofWidgets, and our lovely library of math `mathlib`, the challenging gaps left by spatial intuition leave a lot of gnarly induction, casework, and algebra, along with some confusing remnants from `mathlib` and casting obligations.\nISSUE: There appears to be a missing comma before \"and our lovely library\".\nCONFIDENCE: likely\nSEVERITY: low\n\nLINE: 32\nTEXT: By hypothesis, we'll depict the curve for the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.\nISSUE: \"ending on the right to the right\" is redundant. One \"to the right\" should be removed.\nCONFIDENCE: very likely\nSEVERITY: medium\n\nLINE: 53\nTEXT: (2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))\nISSUE: There's an extra `^` in `2^(n-1)`. It should probably be `2^{2(n-1)}`.\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 74\nTEXT: $`H_n(i)` is only one block off from $`H_i(i + 1)`.\nISSUE: It should probably be $`H_n(i+1)` instead of $`H_i(i+1)`.\nCONFIDENCE: very likely\nSEVERITY: high",
+          "issues_found": 5,
+          "issues": [
+            {
+              "text": "$`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+              "type": "typo",
+              "explanation": "Missing period at the end of the first sentence.",
+              "line": 7,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "low"
+            },
+            {
+              "text": "Despite disappointing AI provers, promising inline visualizations with ProofWidgets, and our lovely library of math `mathlib`, the challenging gaps left by spatial intuition leave a lot of gnarly induction, casework, and algebra, along with some confusing remnants from `mathlib` and casting obligations.",
+              "type": "typo",
+              "explanation": "There appears to be a missing comma before \"and our lovely library\".",
+              "line": 12,
+              "strategy": "structured_output_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "By hypothesis, we'll depict the curve for the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.",
+              "type": "typo",
+              "explanation": "\"ending on the right to the right\" is redundant. One \"to the right\" should be removed.",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            },
+            {
+              "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+              "type": "typo",
+              "explanation": "There's an extra `^` in `2^(n-1)`. It should probably be `2^{2(n-1)}`.",
+              "line": 53,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "It should probably be $`H_n(i+1)` instead of $`H_i(i+1)`.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "trial": 3,
+          "response": "LINE: 7\nTEXT: square $`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.\nISSUE: Missing period at the end of the second sentence.\nCONFIDENCE: certain\nSEVERITY: high",
+          "issues_found": 1,
+          "issues": [
+            {
+              "text": "square $`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+              "type": "typo",
+              "explanation": "Missing period at the end of the second sentence.",
+              "line": 7,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "trial": 4,
+          "response": "LINE: 3\nTEXT: #doc (Page) \"Formalizing Hilbert Curves in Lean\" =>\nISSUE: The \"=>\" at the end of the line seems out of place for a document title. It might be a remnant from a different syntax or an accidental inclusion.\nCONFIDENCE: very likely\nSEVERITY: medium\n\nLINE: 74\nTEXT: From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.\nISSUE: There appears to be a typo/copy-paste error in the mathematical expression. It says $`H_i(i + 1)` which should likely be $`H_n(i+1)`. The subscript 'i' seems incorrect in this context, given the prior use of 'n'.\nCONFIDENCE: very likely\nSEVERITY: medium",
+          "issues_found": 2,
+          "issues": [
+            {
+              "text": "#doc (Page) \"Formalizing Hilbert Curves in Lean\" =>",
+              "type": "typo",
+              "explanation": "The \"=>\" at the end of the line seems out of place for a document title. It might be a remnant from a different syntax or an accidental inclusion.",
+              "line": 3,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            },
+            {
+              "text": "From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "There appears to be a typo/copy-paste error in the mathematical expression. It says $`H_i(i + 1)` which should likely be $`H_n(i+1)`. The subscript 'i' seems incorrect in this context, given the prior use of 'n'.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 5,
+          "response": "LINE: 74\nTEXT: $`H_i(i + 1)`\nISSUE: Typo. Should be $`H_n(i + 1)`\nCONFIDENCE: very likely\nSEVERITY: high",
+          "issues_found": 1,
+          "issues": [
+            {
+              "text": "$`H_i(i + 1)`",
+              "type": "typo",
+              "explanation": "Typo. Should be $`H_n(i + 1)`",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "trial": 6,
+          "response": "LINE: 47\nTEXT: **Formal Definition**: We'll define a Hilbert curve $`H_n : \\mathbb{N} \\to \\mathbb{N} \\times \\mathbb{N}` recursively as follows:\nISSUE: The backtick at the end is unescaped, it should be \\`\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 53\nTEXT: (2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i\nISSUE: There are two errors in this line, there is a missing power of 2 and there is `H_n` instead of `H_{n-1}`. The corrected version is `(2^n - 1, 2^(n - 1) - 1) - swap(H_{n-1}(i - 3 \\cdot 2^{2(n-1)}))`\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 55\nTEXT: where $`swap((m, n)) = (n, m)`.\nISSUE: The backtick at the end is unescaped, it should be \\`\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 71\nTEXT: $$\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`\nISSUE: The backtick character at the end of the line breaks the LaTeX block, creating a rendering error.\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 73\nTEXT: $$\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`\nISSUE: Similar to line 71, the unescaped backtick at the end breaks the LaTeX block. Also, in the argument for L, there is `H_i` instead of `H_n`.\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 74\nTEXT: From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.\nISSUE: There is `H_i` instead of `H_n`.\nCONFIDENCE: certain\nSEVERITY: high",
+          "issues_found": 6,
+          "issues": [
+            {
+              "text": "**Formal Definition**: We'll define a Hilbert curve $`H_n : \\mathbb{N} \\to \\mathbb{N} \\times \\mathbb{N}` recursively as follows:",
+              "type": "typo",
+              "explanation": "The backtick at the end is unescaped, it should be \\`",
+              "line": 47,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i",
+              "type": "typo",
+              "explanation": "There are two errors in this line, there is a missing power of 2 and there is `H_n` instead of `H_{n-1}`. The corrected version is `(2^n - 1, 2^(n - 1) - 1) - swap(H_{n-1}(i - 3 \\cdot 2^{2(n-1)}))`",
+              "line": 53,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "where $`swap((m, n)) = (n, m)`.",
+              "type": "typo",
+              "explanation": "The backtick at the end is unescaped, it should be \\`",
+              "line": 55,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$$\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`",
+              "type": "typo",
+              "explanation": "The backtick character at the end of the line breaks the LaTeX block, creating a rendering error.",
+              "line": 71,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "$$\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`",
+              "type": "typo",
+              "explanation": "Similar to line 71, the unescaped backtick at the end breaks the LaTeX block. Also, in the argument for L, there is `H_i` instead of `H_n`.",
+              "line": 73,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "There is `H_i` instead of `H_n`.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "trial": 7,
+          "response": "LINE: 1\nTEXT: $`\\LaTeX` instead of $\\LaTeX$\nISSUE: The backticks are unnecessary for math within a paragraph, as indicated by the subsequent math block not having them.\nCONFIDENCE: very likely\nSEVERITY: low\n\nLINE: 74\nTEXT: $`H_n(i)` is only one block off from $`H_i(i + 1)`.\nISSUE: There appears to be a typo, where '$H_i(i + 1)$' should likely be '$H_n(i + 1)$'.\nCONFIDENCE: very likely\nSEVERITY: high",
+          "issues_found": 2,
+          "issues": [
+            {
+              "text": "$`\\LaTeX` instead of $\\LaTeX$",
+              "type": "typo",
+              "explanation": "The backticks are unnecessary for math within a paragraph, as indicated by the subsequent math block not having them.",
+              "line": 1,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "low"
+            },
+            {
+              "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "There appears to be a typo, where '$H_i(i + 1)$' should likely be '$H_n(i + 1)$'.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "trial": 8,
+          "response": "LINE: 1\nTEXT: $`\\LaTeX`\nISSUE: Missing backslash for command in math mode ($`\\LaTeX` should be $\\LaTeX$)\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 16\nTEXT: proofs until you get to the following discussion.\nISSUE: The list that follows \"following discussion\" uses numbered list items. Given that each item has a title in brackets, this appears to be a list of sections rather than points for discussion. The wording \"following discussion\" makes the text slightly ambiguous. Consider rephrasing for clarity.\nCONFIDENCE: likely\nSEVERITY: low\n\nLINE: 32\nTEXT: $`n`th\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 32\nTEXT: $`n-1`th\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 32\nTEXT: $`n-1`th\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 32\nTEXT: $`(0,0)`\nISSUE: Missing space after comma for coordinates\nCONFIDENCE: certain\nSEVERITY: medium\n\nLINE: 32\nTEXT: $`(2^{n-1}, 0)`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 37\nTEXT: $`(0, 0)`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 47\nTEXT: $`H_n : \\mathbb{N} \\to \\mathbb{N} \\times \\mathbb{N}`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 48\nTEXT: $`H_0(i) = (0, 0)`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 49\nTEXT: $`H_n(i) = \\begin{cases}\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 50\nTEXT: $swap(H_{n-1}(i)) &\\text{ if } i < 2^{2(n-1)} \\\\\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 51\nTEXT: $H_{n-1}(i - 2^{2(n-1)}) + (2^{n-1}, 0) &\\text{ if } 2^{2(n-1)} \\le i < 2 \\cdot 2^{2(n-1)} \\\\\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 52\nTEXT: $H_{n-1}(i - 2 \\cdot 2^{2(n-1)}) + (2^{n-1}, 2^{n-1}) &\\text{ if } 2 \\cdot 2^{2(n-1)} \\le i < 3 \\cdot 2^{2(n-1)} \\\\\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 53\nTEXT: $(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i\nISSUE: Missing backslash for command in math mode; two instances of \"2^(n-1)\" should likely be \"2^{n-1}\".\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 55\nTEXT: $where $`swap((m, n)) = (n, m)`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 57\nTEXT: $`[0, 2^n) \\times [0, 2^n)`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 57\nTEXT: $`H_n(i)`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 63\nTEXT: $`\\mathbb{R} \\to \\mathbb{R}`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 63\nTEXT: $`[0, 1]`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 63\nTEXT: $`[0, 2^{2n})`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 63\nTEXT: $`\\frac{1}{2^n}`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 63\nTEXT: $`[0, 1] \\times [0, 1]`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 70\nTEXT: $`\\tilde{H}_n : \\mathbb{R} \\to \\mathbb{R}`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 71\nTEXT: $`\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 72\nTEXT: $`L(x, y, t) = (1 - t) x + t y`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 73\nTEXT: $`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`\nISSUE: Missing backslash for command in math mode. Also, `H_i` should likely be `H_n`.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 74\nTEXT: From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.\nISSUE: Missing backslash for command in math mode. \"furthermore\" could be followed by a comma, but it's not strictly necessary. `H_i` should likely be `H_n`. Also, the em dash (`--`) is written with two hyphens, which is a common markdown syntax but aesthetically might be better as a proper em dash (\u2014).\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 90\nTEXT: $`\\tilde{H}_n(t)`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 90\nTEXT: $`\\tilde{H}_{n+1}(t)`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 97\nTEXT: $`H(t) = \\lim_{n \\to \\infty} \\tilde{H}_n(t)`\nISSUE: Missing backslash for command in math mode\nCONFIDENCE: certain\nSEVERITY: low",
+          "issues_found": 31,
+          "issues": [
+            {
+              "text": "$`\\LaTeX`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode ($`\\LaTeX` should be $\\LaTeX$)",
+              "line": 1,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "proofs until you get to the following discussion.",
+              "type": "typo",
+              "explanation": "The list that follows \"following discussion\" uses numbered list items. Given that each item has a title in brackets, this appears to be a list of sections rather than points for discussion. The wording \"following discussion\" makes the text slightly ambiguous. Consider rephrasing for clarity.",
+              "line": 16,
+              "strategy": "structured_output_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "$`n`th",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`n-1`th",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`n-1`th",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`(0,0)`",
+              "type": "typo",
+              "explanation": "Missing space after comma for coordinates",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "$`(2^{n-1}, 0)`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`(0, 0)`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 37,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`H_n : \\mathbb{N} \\to \\mathbb{N} \\times \\mathbb{N}`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 47,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`H_0(i) = (0, 0)`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 48,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`H_n(i) = \\begin{cases}",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 49,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$swap(H_{n-1}(i)) &\\text{ if } i < 2^{2(n-1)} \\\\",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 50,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$H_{n-1}(i - 2^{2(n-1)}) + (2^{n-1}, 0) &\\text{ if } 2^{2(n-1)} \\le i < 2 \\cdot 2^{2(n-1)} \\\\",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 51,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$H_{n-1}(i - 2 \\cdot 2^{2(n-1)}) + (2^{n-1}, 2^{n-1}) &\\text{ if } 2 \\cdot 2^{2(n-1)} \\le i < 3 \\cdot 2^{2(n-1)} \\\\",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 52,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode; two instances of \"2^(n-1)\" should likely be \"2^{n-1}\".",
+              "line": 53,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$where $`swap((m, n)) = (n, m)`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 55,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`[0, 2^n) \\times [0, 2^n)`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 57,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`H_n(i)`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 57,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`\\mathbb{R} \\to \\mathbb{R}`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 63,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`[0, 1]`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 63,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`[0, 2^{2n})`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 63,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`\\frac{1}{2^n}`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 63,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`[0, 1] \\times [0, 1]`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 63,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`\\tilde{H}_n : \\mathbb{R} \\to \\mathbb{R}`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 70,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 71,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`L(x, y, t) = (1 - t) x + t y`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 72,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode. Also, `H_i` should likely be `H_n`.",
+              "line": 73,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode. \"furthermore\" could be followed by a comma, but it's not strictly necessary. `H_i` should likely be `H_n`. Also, the em dash (`--`) is written with two hyphens, which is a common markdown syntax but aesthetically might be better as a proper em dash (\u2014).",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`\\tilde{H}_n(t)`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 90,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`\\tilde{H}_{n+1}(t)`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 90,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`H(t) = \\lim_{n \\to \\infty} \\tilde{H}_n(t)`",
+              "type": "typo",
+              "explanation": "Missing backslash for command in math mode",
+              "line": 97,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            }
+          ]
+        },
+        {
+          "trial": 9,
+          "response": "LINE: 74\nTEXT: H_i(i + 1)\nISSUE: Typo: should be H_n, not H_i.\nCONFIDENCE: very likely\nSEVERITY: medium",
+          "issues_found": 1,
+          "issues": [
+            {
+              "text": "H_i(i + 1)",
+              "type": "typo",
+              "explanation": "Typo: should be H_n, not H_i.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 10,
+          "response": "There are no errors found.",
+          "issues_found": 0,
+          "issues": []
+        }
+      ]
+    },
+    {
+      "input_strategy": "Arrow",
+      "output_strategy": "Structured",
+      "confidence_levels": "3-level",
+      "num_trials": 10,
+      "mean_issues": 7,
+      "stdev_issues": 3.559026084010437,
+      "min_issues": 2,
+      "max_issues": 15,
+      "trials": [
+        {
+          "trial": 1,
+          "response": "LINE: 1\nTEXT: $`\\LaTeX`\nISSUE: Missing backslash for LaTex\nCONFIDENCE: very likely\nSEVERITY: low\n\nLINE: 7\nTEXT: $`[0, 1] \\times [0, 1]`.\nISSUE: Missing a period at the end of the sentence.\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 12\nTEXT: Holder\nISSUE: Spelling error: \"Holder\" should be \"H\u00f6lder\" or \"Hoelder\". Given the context of mathematical continuity properties, \"H\u00f6lder continuity\" is the correct term.\nCONFIDENCE: certain\nSEVERITY: medium\n\nLINE: 32\nTEXT: $`n`th\nISSUE: Missing a space between \"$`n`\" and \"th\".\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 32\nTEXT: $`n-1`th\nISSUE: Missing a space between \"$`n-1`\" and \"th\".\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 32\nTEXT: $`n-1`th\nISSUE: Missing a space between \"$`n-1`\" and \"th\".\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 50\nTEXT: $`H_{n-1}(i - 2^{2(n-1)}) + (2^{n-1}, 0) &\\text{ if } 2^{2(n-1)} \\le i < 2 \\cdot 2^{2(n-1)} \\\\\nISSUE: The backslashes at the end of the line (newline character) should be `\\\\`. This notation is used to represent a line break within a math environment like `$$`.\nCONFIDENCE: certain\nSEVERITY: medium\n\nLINE: 51\nTEXT: $`H_{n-1}(i - 2 \\cdot 2^{2(n-1)}) + (2^{n-1}, 2^{n-1}) &\\text{ if } 2 \\cdot 2^{2(n-1)} \\le i < 3 \\cdot 2^{2(n-1)} \\\\\nISSUE: The backslashes at the end of the line (newline character) should be `\\\\`.\nCONFIDENCE: certain\nSEVERITY: medium\n\nLINE: 53\nTEXT: $`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i\nISSUE: The backslashes at the end of the line (newline character) should be `\\\\`.\nCONFIDENCE: certain\nSEVERITY: medium\n\nLINE: 74\nTEXT: $`H_i(i + 1)`.\nISSUE: The variable `i` should be `n` based on the previous uses of `H_n`.\nCONFIDENCE: very likely\nSEVERITY: medium",
+          "issues_found": 10,
+          "issues": [
+            {
+              "text": "$`\\LaTeX`",
+              "type": "typo",
+              "explanation": "Missing backslash for LaTex",
+              "line": 1,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "low"
+            },
+            {
+              "text": "$`[0, 1] \\times [0, 1]`.",
+              "type": "typo",
+              "explanation": "Missing a period at the end of the sentence.",
+              "line": 7,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "Holder",
+              "type": "typo",
+              "explanation": "Spelling error: \"Holder\" should be \"H\u00f6lder\" or \"Hoelder\". Given the context of mathematical continuity properties, \"H\u00f6lder continuity\" is the correct term.",
+              "line": 12,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "$`n`th",
+              "type": "typo",
+              "explanation": "Missing a space between \"$`n`\" and \"th\".",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`n-1`th",
+              "type": "typo",
+              "explanation": "Missing a space between \"$`n-1`\" and \"th\".",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`n-1`th",
+              "type": "typo",
+              "explanation": "Missing a space between \"$`n-1`\" and \"th\".",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`H_{n-1}(i - 2^{2(n-1)}) + (2^{n-1}, 0) &\\text{ if } 2^{2(n-1)} \\le i < 2 \\cdot 2^{2(n-1)} \\\\",
+              "type": "typo",
+              "explanation": "The backslashes at the end of the line (newline character) should be `\\\\`. This notation is used to represent a line break within a math environment like `$$`.",
+              "line": 50,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "$`H_{n-1}(i - 2 \\cdot 2^{2(n-1)}) + (2^{n-1}, 2^{n-1}) &\\text{ if } 2 \\cdot 2^{2(n-1)} \\le i < 3 \\cdot 2^{2(n-1)} \\\\",
+              "type": "typo",
+              "explanation": "The backslashes at the end of the line (newline character) should be `\\\\`.",
+              "line": 51,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i",
+              "type": "typo",
+              "explanation": "The backslashes at the end of the line (newline character) should be `\\\\`.",
+              "line": 53,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "$`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "The variable `i` should be `n` based on the previous uses of `H_n`.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 2,
+          "response": "LINE: 7\nTEXT: $`[0, 1] \\times [0, 1]`. To\nISSUE: Missing space after the period.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 12\nTEXT: Holder\nISSUE: \"Holder\" should be capitalized as \"H\u00f6lder\" when referring to H\u00f6lder continuity.\nCONFIDENCE: very likely\nSEVERITY: low\n\nLINE: 32\nTEXT: $`(2^{n-1}, 0)`.\nISSUE: Missing space before the period.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 51\nTEXT: $`2^(n-1)}`))\nISSUE: Typo. Should likely be $`2^{n-1}`.\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 53\nTEXT: $`2^{2^(n-1)}`))\nISSUE: Typo. Likely meant $`2^{2(n-1)}` to be consistent with the other terms.\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 74\nTEXT: $`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`\nISSUE: Typo. Should likely be $`H_n` instead of $`H_i` to match the previous and subsequent terms.\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 74\nTEXT: $`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor)`\nISSUE: Typo. Should likely be $`H_n` instead of $`H_i` to match the previous and subsequent terms.\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 74\nTEXT: $`H_i(i + 1)`\nISSUE: Typo. Should likely be $`H_n(i + 1)` and $`H_n(i)` to match the previous phrase.\nCONFIDENCE: very likely\nSEVERITY: high",
+          "issues_found": 8,
+          "issues": [
+            {
+              "text": "$`[0, 1] \\times [0, 1]`. To",
+              "type": "typo",
+              "explanation": "Missing space after the period.",
+              "line": 7,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "Holder",
+              "type": "typo",
+              "explanation": "\"Holder\" should be capitalized as \"H\u00f6lder\" when referring to H\u00f6lder continuity.",
+              "line": 12,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "low"
+            },
+            {
+              "text": "$`(2^{n-1}, 0)`.",
+              "type": "typo",
+              "explanation": "Missing space before the period.",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`2^(n-1)}`))",
+              "type": "typo",
+              "explanation": "Typo. Should likely be $`2^{n-1}`.",
+              "line": 51,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "$`2^{2^(n-1)}`))",
+              "type": "typo",
+              "explanation": "Typo. Likely meant $`2^{2(n-1)}` to be consistent with the other terms.",
+              "line": 53,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`",
+              "type": "typo",
+              "explanation": "Typo. Should likely be $`H_n` instead of $`H_i` to match the previous and subsequent terms.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor)`",
+              "type": "typo",
+              "explanation": "Typo. Should likely be $`H_n` instead of $`H_i` to match the previous and subsequent terms.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_i(i + 1)`",
+              "type": "typo",
+              "explanation": "Typo. Should likely be $`H_n(i + 1)` and $`H_n(i)` to match the previous phrase.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "trial": 3,
+          "response": "LINE: 32\nTEXT: $`(2^{n-1}, 0)`.\nISSUE: There appears to be a backtick missing at the start of the math block.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 74\nTEXT: $`H_i(i + 1)`.\nISSUE: The variable `i` seems to be incorrectly used here. Given the context of `H_n(i)`, it's highly probable that this should be `H_n(i+1)`.\nCONFIDENCE: very likely\nSEVERITY: medium",
+          "issues_found": 2,
+          "issues": [
+            {
+              "text": "$`(2^{n-1}, 0)`.",
+              "type": "typo",
+              "explanation": "There appears to be a backtick missing at the start of the math block.",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "The variable `i` seems to be incorrectly used here. Given the context of `H_n(i)`, it's highly probable that this should be `H_n(i+1)`.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 4,
+          "response": "LINE: 1\nTEXT: $`\\LaTeX`\nISSUE: Missing backslash for the LaTeX command `\\LaTeX`. It should be `\\LaTeX` with a backslash before `LaTeX`.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 7\nTEXT: $`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.\nISSUE: The sentence structure could be improved. The second sentence is very long and contains multiple clauses. It could be split into two for better readability.\nCONFIDENCE: very likely\nSEVERITY: low\n\nLINE: 12\nTEXT: Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.\nISSUE: The phrase \"difference in theory versus application\" might be more clearly phrased as \"difference between theory and application.\"\nCONFIDENCE: likely\nSEVERITY: low\n\nLINE: 12\nTEXT: Holder continuity\nISSUE: Spelling error. It should be \"H\u00f6lder continuity\" (with an umlaut) or \"Hoelder continuity\".\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 12\nTEXT: and our lovely library of math `mathlib`, the challenging gaps left by spatial intuition leave a lot of gnarly induction, casework, and algebra, along with some confusing remnants from `mathlib` and casting obligations.\nISSUE: The sentence structure is complex and lengthy. It could be rephrased for better clarity and flow. For instance, \"Despite X, Y, and Z, the challenging gaps...\" is a bit unwieldy.\nCONFIDENCE: likely\nSEVERITY: low\n\nLINE: 14\nTEXT: as in [S2 Geometry](http://s2geometry.io/), or you can use minor modifications to visualize [ISBNs](https://phiresky.github.io/blog/2025/visualizing-all-books-in-isbn-space/) or [IP addresses](https://davidchall.github.io/ggip/articles/visualizing-ip-data.html).\nISSUE: Missing period at the end of the sentence.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 32\nTEXT: $`n-1`th\nISSUE: No space between \"$`n-1`\" and \"th\". Also, ordinal numbers like \"n-1th\" are often hyphenated, so \"$`n-1`-th\" might be considered for consistency, though this is a style choice.\nCONFIDENCE: likely\nSEVERITY: low\n\nLINE: 32\nTEXT: $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.\nISSUE: Redundant phrase \"to the right\". It should be either \"ending on the right at\" or \"ending at... to the right.\"\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 50\nTEXT: $`swap(H_{n-1}(i)) &\\text{ if } i < 2^{2(n-1)} \\\\\nISSUE: The `&` symbol is used incorrectly here. In LaTeX, `&` is typically used for alignment in environments like `eqnarray` or `align`. In this context, it seems to be an extraneous character or a copy-paste error from a LaTeX environment that's not fully rendered.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 51\nTEXT: $`H_{n-1}(i - 2^{2(n-1)}) + (2^{n-1}, 0) &\\text{ if } 2^{2(n-1)} \\le i < 2 \\cdot 2^{2(n-1)} \\\\\nISSUE: The `&` symbol is used incorrectly here.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 52\nTEXT: $`H_{n-1}(i - 2 \\cdot 2^{2(n-1)}) + (2^{n-1}, 2^{n-1}) &\\text{ if } 2 \\cdot 2^{2(n-1)} \\le i < 3 \\cdot 2^{2(n-1)} \\\\\nISSUE: The `&` symbol is used incorrectly here.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 53\nTEXT: $`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i\nISSUE: The `&` symbol is used incorrectly here.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 53\nTEXT: $`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))\nISSUE: Within the LaTeX math, `2^(n-1)` should ideally be `2^{n-1}` for consistency with other exponents, especially when the exponent is more than a single character. This is minor and often self-correcting in LaTeX, but good practice. Also, `2^{2^{n-1}}` looks like it might be a typo for `2^{2(n-1)}` to match the pattern in the previous lines.\nCONFIDENCE: very likely\nSEVERITY: medium\n\nLINE: 71\nTEXT: $$`\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`\nISSUE: In `\\tilde{H}_n : \\mathbb{R} \\to \\mathbb{R}`, the \"R\" should be a `\\mathbb{R}` to be consistent with previous `\\mathbb{N}`.\nCONFIDENCE: certain\nSEVERITY: medium\n\nLINE: 73\nTEXT: $$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`\nISSUE: Type for $H_i$. It should likely be $H_n$ consistent with the surrounding text and definitions.\nCONFIDENCE: certain\nSEVERITY: high",
+          "issues_found": 15,
+          "issues": [
+            {
+              "text": "$`\\LaTeX`",
+              "type": "typo",
+              "explanation": "Missing backslash for the LaTeX command `\\LaTeX`. It should be `\\LaTeX` with a backslash before `LaTeX`.",
+              "line": 1,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+              "type": "typo",
+              "explanation": "The sentence structure could be improved. The second sentence is very long and contains multiple clauses. It could be split into two for better readability.",
+              "line": 7,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "low"
+            },
+            {
+              "text": "Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+              "type": "typo",
+              "explanation": "The phrase \"difference in theory versus application\" might be more clearly phrased as \"difference between theory and application.\"",
+              "line": 12,
+              "strategy": "structured_output_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "Holder continuity",
+              "type": "typo",
+              "explanation": "Spelling error. It should be \"H\u00f6lder continuity\" (with an umlaut) or \"Hoelder continuity\".",
+              "line": 12,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "and our lovely library of math `mathlib`, the challenging gaps left by spatial intuition leave a lot of gnarly induction, casework, and algebra, along with some confusing remnants from `mathlib` and casting obligations.",
+              "type": "typo",
+              "explanation": "The sentence structure is complex and lengthy. It could be rephrased for better clarity and flow. For instance, \"Despite X, Y, and Z, the challenging gaps...\" is a bit unwieldy.",
+              "line": 12,
+              "strategy": "structured_output_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "as in [S2 Geometry](http://s2geometry.io/), or you can use minor modifications to visualize [ISBNs](https://phiresky.github.io/blog/2025/visualizing-all-books-in-isbn-space/) or [IP addresses](https://davidchall.github.io/ggip/articles/visualizing-ip-data.html).",
+              "type": "typo",
+              "explanation": "Missing period at the end of the sentence.",
+              "line": 14,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`n-1`th",
+              "type": "typo",
+              "explanation": "No space between \"$`n-1`\" and \"th\". Also, ordinal numbers like \"n-1th\" are often hyphenated, so \"$`n-1`-th\" might be considered for consistency, though this is a style choice.",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "$`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.",
+              "type": "typo",
+              "explanation": "Redundant phrase \"to the right\". It should be either \"ending on the right at\" or \"ending at... to the right.\"",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`swap(H_{n-1}(i)) &\\text{ if } i < 2^{2(n-1)} \\\\",
+              "type": "typo",
+              "explanation": "The `&` symbol is used incorrectly here. In LaTeX, `&` is typically used for alignment in environments like `eqnarray` or `align`. In this context, it seems to be an extraneous character or a copy-paste error from a LaTeX environment that's not fully rendered.",
+              "line": 50,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_{n-1}(i - 2^{2(n-1)}) + (2^{n-1}, 0) &\\text{ if } 2^{2(n-1)} \\le i < 2 \\cdot 2^{2(n-1)} \\\\",
+              "type": "typo",
+              "explanation": "The `&` symbol is used incorrectly here.",
+              "line": 51,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_{n-1}(i - 2 \\cdot 2^{2(n-1)}) + (2^{n-1}, 2^{n-1}) &\\text{ if } 2 \\cdot 2^{2(n-1)} \\le i < 3 \\cdot 2^{2(n-1)} \\\\",
+              "type": "typo",
+              "explanation": "The `&` symbol is used incorrectly here.",
+              "line": 52,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i",
+              "type": "typo",
+              "explanation": "The `&` symbol is used incorrectly here.",
+              "line": 53,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+              "type": "typo",
+              "explanation": "Within the LaTeX math, `2^(n-1)` should ideally be `2^{n-1}` for consistency with other exponents, especially when the exponent is more than a single character. This is minor and often self-correcting in LaTeX, but good practice. Also, `2^{2^{n-1}}` looks like it might be a typo for `2^{2(n-1)}` to match the pattern in the previous lines.",
+              "line": 53,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            },
+            {
+              "text": "$$`\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`",
+              "type": "typo",
+              "explanation": "In `\\tilde{H}_n : \\mathbb{R} \\to \\mathbb{R}`, the \"R\" should be a `\\mathbb{R}` to be consistent with previous `\\mathbb{N}`.",
+              "line": 71,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "$$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`",
+              "type": "typo",
+              "explanation": "Type for $H_i$. It should likely be $H_n$ consistent with the surrounding text and definitions.",
+              "line": 73,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "trial": 5,
+          "response": "LINE: 32\nTEXT: $`(2^{n-1}, 0)`.\nISSUE: Missing a closing backtick for LaTeX. It should be ($`\\LaTeX`$).\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 53\nTEXT: $`(2^n - 1, 2^(n-1) - 1)`\nISSUE: Missing a curly brace around `n-1` to render 2^(n-1) correctly in LaTeX.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 53\nTEXT: `2^(n-1)}))\nISSUE: Missing a curly brace around `n-1` to render 2^(n-1) correctly in LaTeX.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 74\nTEXT: $`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`.\nISSUE: It seems like it should be $`H_n` here, consistent with the rest of the formula, instead of $`H_i`.\nCONFIDENCE: very likely\nSEVERITY: medium\n\nLINE: 74\nTEXT: $`H_i(i + 1)`.\nISSUE: It seems like it should be $`H_n(i+1)` here, consistent with the previous part of the sentence ($`H_n(i)`), instead of $`H_i(i+1)`.\nCONFIDENCE: very likely\nSEVERITY: medium",
+          "issues_found": 5,
+          "issues": [
+            {
+              "text": "$`(2^{n-1}, 0)`.",
+              "type": "typo",
+              "explanation": "Missing a closing backtick for LaTeX. It should be ($`\\LaTeX`$).",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`(2^n - 1, 2^(n-1) - 1)`",
+              "type": "typo",
+              "explanation": "Missing a curly brace around `n-1` to render 2^(n-1) correctly in LaTeX.",
+              "line": 53,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "`2^(n-1)}))",
+              "type": "typo",
+              "explanation": "Missing a curly brace around `n-1` to render 2^(n-1) correctly in LaTeX.",
+              "line": 53,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`.",
+              "type": "typo",
+              "explanation": "It seems like it should be $`H_n` here, consistent with the rest of the formula, instead of $`H_i`.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            },
+            {
+              "text": "$`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "It seems like it should be $`H_n(i+1)` here, consistent with the previous part of the sentence ($`H_n(i)`), instead of $`H_i(i+1)`.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 6,
+          "response": "LINE: 71\nTEXT: $$`\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`\nISSUE: Missing closing backtick for the $$` block. Also, the 2n in H_n(...2^2n) should probably be 2n + 1 (the next value), or the last H_n should refer to H_0.\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 73\nTEXT: $$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`\nISSUE: The H_i should be H_n.\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 74\nTEXT: From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.\nISSUE: H_i should be H_n.\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 97\nTEXT: **Definition**: Let $`H(t) = \\lim_{n \\to \\infty} \\tilde{H}_n(t)`.\nISSUE: Missing closing backtick for $$`.\nCONFIDENCE: very likely\nSEVERITY: high",
+          "issues_found": 4,
+          "issues": [
+            {
+              "text": "$$`\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`",
+              "type": "typo",
+              "explanation": "Missing closing backtick for the $$` block. Also, the 2n in H_n(...2^2n) should probably be 2n + 1 (the next value), or the last H_n should refer to H_0.",
+              "line": 71,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "$$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`",
+              "type": "typo",
+              "explanation": "The H_i should be H_n.",
+              "line": 73,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "H_i should be H_n.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "**Definition**: Let $`H(t) = \\lim_{n \\to \\infty} \\tilde{H}_n(t)`.",
+              "type": "typo",
+              "explanation": "Missing closing backtick for $$`.",
+              "line": 97,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "trial": 7,
+          "response": "LINE: 7\nTEXT: square $`[0, 1] \\times [0, 1]`. To\nISSUE: There is a punctuation error. The period should be inside the math delimiter.\nCONFIDENCE: very likely\nSEVERITY: medium\n\nLINE: 12\nTEXT: Holder continuity\nISSUE: Spelling error. \"Holder\" should be capitalized as it is a proper noun (after Otto H\u00f6lder).\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 32\nTEXT: $`n-1`th Hilbert curve and stitch them together. By hypothesis, we'll depict the curve for the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.\nISSUE: Redundant phrase \"to the right\".\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 53\nTEXT: (2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))\nISSUE: There is a typo in the exponent. It should be 2(n-1) instead of 2^(n-1).\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 74\nTEXT: $`H_n(i)` is only one block off from $`H_i(i + 1)`.\nISSUE: There is a typo. It should likely be $`H_n(i+1)` instead of $`H_i(i+1)`.\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 98\nTEXT: $\\tilde{H}_n(t)`.\nISSUE: Punctuation error. The period should be within the math delimiter.\nCONFIDENCE: very likely\nSEVERITY: medium",
+          "issues_found": 6,
+          "issues": [
+            {
+              "text": "square $`[0, 1] \\times [0, 1]`. To",
+              "type": "typo",
+              "explanation": "There is a punctuation error. The period should be inside the math delimiter.",
+              "line": 7,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            },
+            {
+              "text": "Holder continuity",
+              "type": "typo",
+              "explanation": "Spelling error. \"Holder\" should be capitalized as it is a proper noun (after Otto H\u00f6lder).",
+              "line": 12,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`n-1`th Hilbert curve and stitch them together. By hypothesis, we'll depict the curve for the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.",
+              "type": "typo",
+              "explanation": "Redundant phrase \"to the right\".",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+              "type": "typo",
+              "explanation": "There is a typo in the exponent. It should be 2(n-1) instead of 2^(n-1).",
+              "line": 53,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "There is a typo. It should likely be $`H_n(i+1)` instead of $`H_i(i+1)`.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "$\\tilde{H}_n(t)`.",
+              "type": "typo",
+              "explanation": "Punctuation error. The period should be within the math delimiter.",
+              "line": 98,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 8,
+          "response": "LINE: 7\nTEXT: $`[0, 1] \\times [0, 1]`.\nISSUE: Missing closing backtick for inline math delimiter.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 12\nTEXT: Holder continuity\nISSUE: \"Holder\" should be \"H\u00f6lder\" (with an umlaut).\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 32\nTEXT: $`n`th Hilbert curve, take 4 copies of the $`n-1`th Hilbert curve and stitch them together. By hypothesis, we'll depict the curve for the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.\nISSUE: \"to the right at the right\" is redundant. One \"to the right\" is sufficient.\nCONFIDENCE: certain\nSEVERITY: medium\n\nLINE: 53\nTEXT: $`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) `\nISSUE: There's an inconsistency in the power notation for `2n-1` in `2^(n-1)`. Should it be `2^{n-1}` like in other places? Also, `H_n` should likely be `H_{n-1}` in the last case to maintain the recursive pattern.\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 53\nTEXT: $`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) `\nISSUE: The `-` operator is used between a coordinate pair and `swap(...)`. While a vector subtraction might be implied, it's usually written as `(A,B) - (C,D)`. This phrasing is ambiguous or incorrect in a formal definition.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 73\nTEXT: $`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`\nISSUE: `H_i` should likely be `H_n` to be consistent with the earlier part of the equation and the overall definition of `H_n`.\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 74\nTEXT: $`H_n(i)` is only one block off from $`H_i(i + 1)`.\nISSUE: `H_i` should likely be `H_n` to refer to the same level of Hilbert curve.\nCONFIDENCE: very likely\nSEVERITY: medium",
+          "issues_found": 7,
+          "issues": [
+            {
+              "text": "$`[0, 1] \\times [0, 1]`.",
+              "type": "typo",
+              "explanation": "Missing closing backtick for inline math delimiter.",
+              "line": 7,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "Holder continuity",
+              "type": "typo",
+              "explanation": "\"Holder\" should be \"H\u00f6lder\" (with an umlaut).",
+              "line": 12,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "$`n`th Hilbert curve, take 4 copies of the $`n-1`th Hilbert curve and stitch them together. By hypothesis, we'll depict the curve for the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.",
+              "type": "typo",
+              "explanation": "\"to the right at the right\" is redundant. One \"to the right\" is sufficient.",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) `",
+              "type": "typo",
+              "explanation": "There's an inconsistency in the power notation for `2n-1` in `2^(n-1)`. Should it be `2^{n-1}` like in other places? Also, `H_n` should likely be `H_{n-1}` in the last case to maintain the recursive pattern.",
+              "line": 53,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) `",
+              "type": "typo",
+              "explanation": "The `-` operator is used between a coordinate pair and `swap(...)`. While a vector subtraction might be implied, it's usually written as `(A,B) - (C,D)`. This phrasing is ambiguous or incorrect in a formal definition.",
+              "line": 53,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`",
+              "type": "typo",
+              "explanation": "`H_i` should likely be `H_n` to be consistent with the earlier part of the equation and the overall definition of `H_n`.",
+              "line": 73,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "`H_i` should likely be `H_n` to refer to the same level of Hilbert curve.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 9,
+          "response": "LINE: 7\nTEXT: $`[0, 1] \\times [0, 1]`.\nISSUE: Missing period at the end of the sentence.\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 12\nTEXT: Holder continuity\nISSUE: \"Holder\" should be \"H\u00f6lder\".\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 32\nTEXT: $`n`th Hilbert curve, take 4 copies of the $`n-1`th Hilbert curve and stitch them together. By hypothesis, we'll depict the curve for the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.\nISSUE: \"to the right\" is repeated.\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 53\nTEXT: $`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i\nISSUE: Missing closing backtick for the LaTeX expression.\nCONFIDENCE: certain\nSEVERITY: high\n\nLINE: 63\nTEXT: $`\\mathbb{R} \\to \\mathbb{R}`, then we reparameterize the curve to go from $`[0, 1]` instead of $`[0, 2^{2n})`, and finally we scale down the output by $`\\frac{1}{2^n}` so it fits in $`[0, 1] \\times [0, 1]`.\nISSUE: Missing period at the end of the sentence.\nCONFIDENCE: certain\nSEVERITY: low\n\nLINE: 74\nTEXT: $`H_i(i + 1)`.\nISSUE: Inconsistency in the subscript for H. It should likely be `H_n` consistently.\nCONFIDENCE: very likely\nSEVERITY: medium\n\nLINE: 74\nTEXT: $`H_i(i + 1)`.\nISSUE: Missing period at the end of the sentence.\nCONFIDENCE: certain\nSEVERITY: low",
+          "issues_found": 7,
+          "issues": [
+            {
+              "text": "$`[0, 1] \\times [0, 1]`.",
+              "type": "typo",
+              "explanation": "Missing period at the end of the sentence.",
+              "line": 7,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "Holder continuity",
+              "type": "typo",
+              "explanation": "\"Holder\" should be \"H\u00f6lder\".",
+              "line": 12,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`n`th Hilbert curve, take 4 copies of the $`n-1`th Hilbert curve and stitch them together. By hypothesis, we'll depict the curve for the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.",
+              "type": "typo",
+              "explanation": "\"to the right\" is repeated.",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)})) &\\text{ if } 3 \\cdot 2^{2(n-1)} \\le i",
+              "type": "typo",
+              "explanation": "Missing closing backtick for the LaTeX expression.",
+              "line": 53,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`\\mathbb{R} \\to \\mathbb{R}`, then we reparameterize the curve to go from $`[0, 1]` instead of $`[0, 2^{2n})`, and finally we scale down the output by $`\\frac{1}{2^n}` so it fits in $`[0, 1] \\times [0, 1]`.",
+              "type": "typo",
+              "explanation": "Missing period at the end of the sentence.",
+              "line": 63,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "Inconsistency in the subscript for H. It should likely be `H_n` consistently.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            },
+            {
+              "text": "$`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "Missing period at the end of the sentence.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            }
+          ]
+        },
+        {
+          "trial": 10,
+          "response": "LINE: 1\nTEXT: $`\\LaTeX`\nISSUE: LaTeX expression is missing a closing backtick.\nCONFIDENCE: very likely\nSEVERITY: high\n\nLINE: 7\nTEXT: The Hilbert curve is a weird fractal that is simultaneously a curve and completely fills the square $`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.\nISSUE: Missing a period at the end of the sentence.\nCONFIDENCE: very likely\nSEVERITY: low\n\nLINE: 12\nTEXT: Holder\nISSUE: Spelling error or potential capitalization error. \"Holder\" should be capitalized (H\u00f6lder) or potentially spelled as \"H\u00f6lderness\". Unsure which is correct in context.\nCONFIDENCE: likely\nSEVERITY: low\n\nLINE: 32\nTEXT: $`n`th\nISSUE: Missing a period at the end of the sentence.\nCONFIDENCE: very likely\nSEVERITY: low\n\nLINE: 53\nTEXT: $`(2^n - 1, 2^(n-1) - 1)`\nISSUE: The power $`2^(n-1)` is likely missing curly braces around the exponent $`(n-1)`. It should be $`2^{n-1}`.\nCONFIDENCE: likely\nSEVERITY: high\n\nLINE: 74\nTEXT: $`H_n(i)` is only one block off from $`H_i(i + 1)`.\nISSUE: Inconsistency in the subscript for H. It transitions from $`H_n(i)` to $`H_i(i + 1)`. Likely should be $`H_n(i + 1)`.\nCONFIDENCE: very likely\nSEVERITY: high",
+          "issues_found": 6,
+          "issues": [
+            {
+              "text": "$`\\LaTeX`",
+              "type": "typo",
+              "explanation": "LaTeX expression is missing a closing backtick.",
+              "line": 1,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "The Hilbert curve is a weird fractal that is simultaneously a curve and completely fills the square $`[0, 1] \\times [0, 1]`. To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others. Given that correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+              "type": "typo",
+              "explanation": "Missing a period at the end of the sentence.",
+              "line": 7,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "low"
+            },
+            {
+              "text": "Holder",
+              "type": "typo",
+              "explanation": "Spelling error or potential capitalization error. \"Holder\" should be capitalized (H\u00f6lder) or potentially spelled as \"H\u00f6lderness\". Unsure which is correct in context.",
+              "line": 12,
+              "strategy": "structured_output_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "$`n`th",
+              "type": "typo",
+              "explanation": "Missing a period at the end of the sentence.",
+              "line": 32,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "low"
+            },
+            {
+              "text": "$`(2^n - 1, 2^(n-1) - 1)`",
+              "type": "typo",
+              "explanation": "The power $`2^(n-1)` is likely missing curly braces around the exponent $`(n-1)`. It should be $`2^{n-1}`.",
+              "line": 53,
+              "strategy": "structured_output_categorical",
+              "confidence": "likely",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "Inconsistency in the subscript for H. It transitions from $`H_n(i)` to $`H_i(i + 1)`. Likely should be $`H_n(i + 1)`.",
+              "line": 74,
+              "strategy": "structured_output_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input_strategy": "Arrow",
+      "output_strategy": "Line citations",
+      "confidence_levels": "4-level",
+      "num_trials": 10,
+      "mean_issues": 3.5,
+      "stdev_issues": 3.24037034920393,
+      "min_issues": 0,
+      "max_issues": 11,
+      "trials": [
+        {
+          "trial": 1,
+          "response": "- Line 53: [(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))] (mathematical notation error: the subscript 'n' for H_n should refer to the curve iteration and not appear in the arguments for 'i') | Confidence: certain | Severity: high\n- Line 73: [H_i] (mathematical notation error: 'H_i' should be 'H_n' to match the function definition) | Confidence: certain | Severity: medium\n- Line 74: [H_i] (mathematical notation error: 'H_i' should be 'H_n' to match the function definition) | Confidence: certain | Severity: medium",
+          "issues_found": 3,
+          "issues": [
+            {
+              "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "H_i",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 73,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "H_i",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 2,
+          "response": "- Line 5: [Matt Iverson's friend] (The apostrophe is missing for possession) | Confidence: certain | Severity: low\n- Line 7: [informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others.] (The phrase \"but I hope the gist is understandable to others\" is a bit awkward. It could be rephrased for better flow, e.g., \"but the gist should be understandable to others\" or \"but the main idea should be clear.\") | Confidence: likely | Severity: low\n- Line 32: [(2^{n-1}, 0)] (There is an extra space between `$` and the opening parenthesis. This affects rendering.) | Confidence: certain | Severity: low\n- Line 32: [(2^{n-1}, 0)] (This should likely be `(2^{n-1}, 2^{n-1})` as it's the end of the shape and the text says \"ending on the right to the right\". However, without knowing the exact intended shape, it's difficult to be certain. Given the context of Hilbert curves filling squares, it's highly probable the x and y coordinates would be symmetric here.) | Confidence: very likely | Severity: medium\n- Line 50: [i < 2^{2(n-1)}] (There should be an extra space to the right of this inequality sign for better mathematical formatting, consistent with other inequalities in the formula. This is a stylistic issue for LaTeX.) | Confidence: certain | Severity: low\n- Line 53: [(2^n - 1, 2^(n-1) - 1)] (The `n-1` in the exponent for the y-coordinate is not enclosed in curly braces, which might lead to unexpected LaTeX rendering as `2^n-1` instead of `2^{n-1}`.) | Confidence: certain | Severity: high\n- Line 53: [H_n(i - 3 \\cdot 2^{2^(n-1)})] (Similar to the previous point, `2^(n-1)` might render incorrectly as `2^n-1` due to missing curly braces around `n-1` in the exponent.) | Confidence: certain | Severity: high\n- Line 71: [\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)] (There's an inconsistent space in `2^{2 n}` for the second `H_n` term. It should likely be `2^{2n}` like the others. This is a minor LaTeX formatting inconsistency.) | Confidence: certain | Severity: low\n- Line 73: [\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)] (Similar to the previous point, there's an inconsistent space in `2^{2 n}` for the first `H_n` term and the third term. All should probably be `2^{2n}`. Also, `H_i` should likely be `H_n` for consistency with the previous line and the definition of `\\tilde{H}_n(t)`.) | Confidence: certain | Severity: high\n- Line 74: [H_i(i + 1)] (This should likely be `H_n(i + 1)` to be consistent with the surrounding context referring to the n-th Hilbert curve.) | Confidence: certain | Severity: medium\n- Line 97: [\\lim_{n \\to \\infty} \\tilde{H}_n(t)] (There is no closing backtick for the LaTeX math expression. This will cause a rendering issue.) | Confidence: certain | Severity: high",
+          "issues_found": 11,
+          "issues": [
+            {
+              "text": "Matt Iverson's friend",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 5,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "(2^{n-1}, 0)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 32,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "(2^{n-1}, 0)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 32,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            },
+            {
+              "text": "i < 2^{2(n-1)}",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 50,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "(2^n - 1, 2^(n-1) - 1)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "H_n(i - 3 \\cdot 2^{2^(n-1)})",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 71,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 73,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "H_i(i + 1)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "\\lim_{n \\to \\infty} \\tilde{H}_n(t)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 97,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "trial": 3,
+          "response": "- Line 73: [H_i] (Mathematical notation error. Should be H_n based on the previous line and context.) | Confidence: certain | Severity: high",
+          "issues_found": 1,
+          "issues": [
+            {
+              "text": "H_i",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 73,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "trial": 4,
+          "response": "- Line 5: [Matt Iverson's friend] (The apostrophe is missing in \"Iverson's\") | Confidence: certain | Severity: low",
+          "issues_found": 1,
+          "issues": [
+            {
+              "text": "Matt Iverson's friend",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 5,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            }
+          ]
+        },
+        {
+          "trial": 5,
+          "response": "There are no errors found.",
+          "issues_found": 0,
+          "issues": []
+        },
+        {
+          "trial": 6,
+          "response": "- Line 32: [$`n`th Hilbert curve, take 4 copies of the $`n-1`th Hilbert curve and stitch them together. By hypothesis, we'll depict the curve for the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.] (Grammatical error: \"on the right to the right\" is redundant. It should be \"on the right\" or \"to the right\".) | Confidence: certain | Severity: medium\n- Line 53: [(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))] (Typo in the exponent: \"2^(n-1)\" should be \"2(n-1)\" to be consistent with other terms in the equation.) | Confidence: very likely | Severity: high\n- Line 70: [$`\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`] (Typo: In the second term within the parenthesis, `$`H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor)` should refer to `+ (...) H_n(...)` where the second `H_n` should represent `H_n(\\lfloor t \\cdot 2^{2n} \\rfloor)` as per typical interpolation formulas. Also, if there are two `H_n` functions for interpolation, the `n` in `2n` is used in the exponent `2^{2n}` which is used for scaling the continuous variable. The argument for `H_n` and its next integer `H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1)` should be based on `i` in the integer version. For clarity, the equation may be simplified or restated for correctness.) | Confidence: very likely | Severity: high\n- Line 73: [$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`] (Typo: `H_i` should be `H_n` to maintain consistency with the earlier function definition.) | Confidence: certain | Severity: high\n- Line 74: [$`H_n(i)` is only one block off from $`H_i(i + 1)`.] (Typo: `H_i(i + 1)` should be `H_n(i + 1)` to maintain consistency.) | Confidence: certain | Severity: high",
+          "issues_found": 5,
+          "issues": [
+            {
+              "text": "$`n`th Hilbert curve, take 4 copies of the $`n-1`th Hilbert curve and stitch them together. By hypothesis, we'll depict the curve for the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 32,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "$`\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 70,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 73,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "trial": 7,
+          "response": "- Line 70: [$`\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`] (Missing right curly bracket for math environment.) | Confidence: certain | Severity: high\n- Line 73: [$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`] (It looks like a typo if `H_i` should be `H_n`. If it is not a typo, then it should be defined.) | Confidence: very likely | Severity: medium\n- Line 74: [$`H_i(i + 1)`] (It looks like a typo if `H_i` should be `H_n`. If it is not a typo, then it should be defined.) | Confidence: very likely | Severity: medium",
+          "issues_found": 3,
+          "issues": [
+            {
+              "text": "$`\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 70,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 73,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            },
+            {
+              "text": "$`H_i(i + 1)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 8,
+          "response": "- Line 7: [fills the square $`[0, 1] \\times [0, 1]`.] (Missing a period at the end of the sentence.) | Confidence: certain | Severity: low\n- Line 53: [(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))] (Possible typo in the subscript of H_n. It should likely be (H_{n-1}) instead of (H_n). Given the earlier equations where it's always (H_{n-1})) | Confidence: likely | Severity: medium\n- Line 53: [2^(n-1)] (Missing a closing brace }) at the end, before the parenthesis. It should be 2^{n-1} instead of 2^(n-1)}.) | Confidence: certain | Severity: high\n- Line 73: [H_i] (Possible typo in the subscript. It should likely be H_n instead of H_i)) | Confidence: likely | Severity: medium\n- Line 74: [H_i] (Possible typo in the subscript. It should likely be H_n instead of H_i)) | Confidence: likely | Severity: medium",
+          "issues_found": 5,
+          "issues": [
+            {
+              "text": "fills the square $`[0, 1",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "2^(n-1)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "H_i",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 73,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "H_i",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 9,
+          "response": "- Line 12: [Holder continuity] (capitalization of \"Holder\") | Confidence: certain | Severity: low\n- Line 53: [(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))] (mathematical expression. It seems like one of the `H_n` should be an `H_{n-1}` and there must not be two `2^` at the exponent) | Confidence: certain | Severity: high\n- Line 70: [\\mathbb{R} \\to \\mathbb{R}] (Mathematical type signature: should be \\mathbb{R} \\to \\mathbb{R}^2) | Confidence: certain | Severity: medium\n- Line 73: [H_i] (Mathematical expression: should be H_n) | Confidence: certain | Severity: medium\n- Line 74: [H_i(i + 1)] (Mathematical expression: should be H_n(i + 1)) | Confidence: certain | Severity: medium",
+          "issues_found": 5,
+          "issues": [
+            {
+              "text": "Holder continuity",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 12,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "\\mathbb{R} \\to \\mathbb{R}",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 70,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "H_i",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 73,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "H_i(i + 1)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 10,
+          "response": "- Line 73: [`H_i`] (Typo: should likely be `H_n` for consistency with `H_n(floor(t * 2^(2n)))`) | Confidence: likely | Severity: medium",
+          "issues_found": 1,
+          "issues": [
+            {
+              "text": "`H_i`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 73,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "input_strategy": "Arrow",
+      "output_strategy": "Line citations",
+      "confidence_levels": "3-level",
+      "num_trials": 10,
+      "mean_issues": 7.7,
+      "stdev_issues": 5.831904586934796,
+      "min_issues": 2,
+      "max_issues": 18,
+      "trials": [
+        {
+          "trial": 1,
+          "response": "- Line 7: [square $`[0, 1] \\times [0, 1]`.] (Punctuation inside math environment) | Confidence: likely | Severity: medium\n- Line 7: [To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others.] (Run-on sentence, suggest splitting or rephrasing for clarity.) | Confidence: likely | Severity: medium\n- Line 12: [Holder continuity] (spelling error, should be \"H\u00f6lder\" or \"Hoelder\") | Confidence: likely | Severity: medium\n- Line 53: [(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))] (Potential typo in the exponentiation 2^(n-1) in the last term or missing `)` around the subtraction) | Confidence: likely | Severity: medium\n- Line 57: [grid from $`[0, 2^n) \\times [0, 2^n)`.] (Punctuation inside math environment) | Confidence: likely | Severity: medium\n- Line 74: [$`H_n(i)` is only one block off from $`H_i(i + 1)`.] (Typo, should likely be $`H_n(i+1)` instead of $`H_i(i+1)`.) | Confidence: very likely | Severity: high\n- Line 97: [$`H(t) = \\lim_{n \\to \\infty} \\tilde{H}_n(t)`.] (Punctuation inside math environment) | Confidence: likely | Severity: medium",
+          "issues_found": 7,
+          "issues": [
+            {
+              "text": "square $`[0, 1",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "To those who haven't internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "Holder continuity",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 12,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "grid from $`[0, 2^n) \\times [0, 2^n)`.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 57,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "$`H(t) = \\lim_{n \\to \\infty} \\tilde{H}_n(t)`.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 97,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 2,
+          "response": "- Line 32: [$`n`th] (Should be $`n`-th for consistency or left as is to match common mathematical notation. Given the context of a general audience, hyphenating might enhance readability.) | Confidence: likely | Severity: low\n- Line 32: [4 copies of the $`n-1`th] (Consistent use of \"th\" is better in most cases. Given the previous suggestion it would be \"$`n`-th\". It should be \"$`n-1`th\" or \"$`(n-1)`-th\") | Confidence: likely | Severity: low\n- Line 53: [$`2^(n-1)}`)] (This seems like a typo where two asterisks are missing and it should be $`2^{2(n-1)}`) | Confidence: certain | Severity: high\n- Line 74: [$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`] (There is a typo, the index should be $`n` instead of $`i`.) | Confidence: certain | Severity: high\n- Line 74: [$`H_i(i + 1)`] (This is an obvious typo, it should be $`H_n(i+1)` instead of $`H_i(i+1)`.) | Confidence: certain | Severity: high",
+          "issues_found": 5,
+          "issues": [
+            {
+              "text": "$`n`th",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 32,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "4 copies of the $`n-1`th",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 32,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "$`2^(n-1)}`)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_i(i + 1)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "trial": 3,
+          "response": "- Line 53: [(2^n - 1, 2^(n-1) - 1)] (mathematical notation error - missing superscript curly brackets for `n`) | Confidence: likely | Severity: medium\n- Line 53: [2^(n-1)] (mathematical notation error - missing superscript curly brackets for `n-1`) | Confidence: likely | Severity: medium\n- Line 74: [H_i] (typo - seems like it should be H_n as is consistent throughout the text) | Confidence: very likely | Severity: medium",
+          "issues_found": 3,
+          "issues": [
+            {
+              "text": "(2^n - 1, 2^(n-1) - 1)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "2^(n-1)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "H_i",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 4,
+          "response": "- Line 73: [`H_i`] (Typo: Should be `H_n` to match the previous definition of `tilde{H}_n` and the context.) | Confidence: very likely | Severity: medium\n- Line 74: [`H_i(i + 1)`] (Typo: Should be `H_n(i + 1)` considering the subscript `n` of the preceding `H_n(i)` and the overall context.) | Confidence: very likely | Severity: medium",
+          "issues_found": 2,
+          "issues": [
+            {
+              "text": "`H_i`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 73,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            },
+            {
+              "text": "`H_i(i + 1)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 5,
+          "response": "- Line 7: [square $`[0, 1] \\times [0, 1]`.] (Punctuation inside math environment) | Confidence: likely | Severity: medium\n- Line 7: [internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others.] (Run-on sentence) | Confidence: likely | Severity: medium\n- Line 7: [correctness of the Hilbert curve needs such depth] (Grammatical error: \"needs such depth\" should be \"requires such depth\" or \"needs that much depth\") | Confidence: likely | Severity: medium\n- Line 12: [Despite disappointing AI provers, promising inline visualizations with ProofWidgets, and our lovely library of math `mathlib`, the challenging gaps left by spatial intuition leave a lot of gnarly induction, casework, and algebra, along with some confusing remnants from `mathlib` and casting obligations.] (Grammatical error: The sentence structure is complex and includes a list within a complex clause, likely causing a slight disconnect. It would be clearer if \"Despite...\" modified a main clause about success or promise, rather than \"the challenging gaps...leave...\".) | Confidence: likely | Severity: medium\n- Line 14: [provide a continuous mapping of integers to 2D coordinates.] (Grammatical error: \"provide\" instead of \"provides\" to match \"They\") | Confidence: likely | Severity: medium\n- Line 14: [coordinates. You can then give a 1D coordinate] (Run-on sentence) | Confidence: likely | Severity: medium\n- Line 32: [constant $`(0, 0)`.] (Punctuation inside math environment) | Confidence: likely | Severity: medium\n- Line 32: [curve, take 4 copies] (Missing comma after introductory phrase) | Confidence: likely | Severity: low\n- Line 32: [the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.] (Repetitive phrase \"to the right\") | Confidence: likely | Severity: high\n- Line 37: [right. Then we'll assemble] (Run-on sentence) | Confidence: likely | Severity: medium\n- Line 53: [(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))] (Potential math-formatting issue: $`2^(n-1)` might be better written as $`2^{n-1}`. Also, `H_n` should probably be `H_{n-1}` to match the pattern of recursive definitions in the lines above.) | Confidence: very likely | Severity: high\n- Line 57: [grid. Now, our pictures] (Run-on sentence) | Confidence: likely | Severity: medium\n- Line 63: [$`\\mathbb{R}`, then we reparameterize] (Run-on sentence) | Confidence: likely | Severity: medium\n- Line 74: [$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`.] (Typo: it should be $`H_n` not $`H_i`.) | Confidence: certain | Severity: high\n- Line 74: [much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.] (Typo: it should be $`H_n` not $`H_i`.) | Confidence: certain | Severity: high\n- Line 80: [curve, then the next iteration only splits that square, so you'll remain there in future iterations.] (Grammatical error: \"only splits that square\" implies the current square. \"splits that square into smaller ones\" might be clearer. Also, the comma before \"so\" suggests a compound sentence, but the clauses feel slightly disjointed.) | Confidence: likely | Severity: medium\n- Line 90: [normalized version, now $`\\tilde{H}_n(t)` is really close to $`\\tilde{H}_{n+1}(t)`, and they get closer] (Run-on sentence. Also, \"now\" feels slightly out of place. Could be \"In the normalized version...\") | Confidence: likely | Severity: medium",
+          "issues_found": 17,
+          "issues": [
+            {
+              "text": "square $`[0, 1",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "internalized analysis, a full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "correctness of the Hilbert curve needs such depth",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "Despite disappointing AI provers, promising inline visualizations with ProofWidgets, and our lovely library of math `mathlib`, the challenging gaps left by spatial intuition leave a lot of gnarly induction, casework, and algebra, along with some confusing remnants from `mathlib` and casting obligations.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 12,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "provide a continuous mapping of integers to 2D coordinates.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 14,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "coordinates. You can then give a 1D coordinate",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 14,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "constant $`(0, 0)`.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 32,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "curve, take 4 copies",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 32,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 32,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "high"
+            },
+            {
+              "text": "right. Then we'll assemble",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 37,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "(2^n - 1, 2^(n-1) - 1) - swap(H_n(i - 3 \\cdot 2^{2^(n-1)}))",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "grid. Now, our pictures",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 57,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "$`\\mathbb{R}`, then we reparameterize",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 63,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "curve, then the next iteration only splits that square, so you'll remain there in future iterations.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 80,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "normalized version, now $`\\tilde{H}_n(t)` is really close to $`\\tilde{H}_{n+1}(t)`, and they get closer",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 90,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 6,
+          "response": "- Line 1: [$`\\LaTeX`] (missing closing backtick) | Confidence: certain | Severity: medium\n- Line 1: [`$\\LaTeX$`] (missing opening backtick) | Confidence: certain | Severity: medium\n- Line 7: [that is simultaneously a curve and completely fills the square $`[0, 1] \\times [0, 1]`.] (awkward phrasing, consider \"that is simultaneously a curve and completely fills the square $`[0, 1] \\times [0, 1]`.\") | Confidence: likely | Severity: low\n- Line 7: [informal proof] (Consider \"informal explanation\" if it's not a formal proof.) | Confidence: likely | Severity: low\n- Line 7: [others.] (potentially unclear noun reference \"others\" \u2013 others than those who haven't internalized analysis? others than the math-trained reader?) | Confidence: likely | Severity: low\n- Line 7: [Given that correctness of the Hilbert curve needs such depth] (Slightly awkward, consider \"Given that the correctness of the Hilbert curve requires such depth,\") | Confidence: likely | Severity: low\n- Line 12: [HTML generation tool. More importantly, I'll also tell you about the other interesting facts you learn by thinking hard about every detail while coding a formalization, such as Holder continuity, computability, partial invertibility, etc. Despite disappointing AI provers, promising inline visualizations with ProofWidgets, and our lovely library of math `mathlib`, the challenging gaps left by spatial intuition leave a lot of gnarly induction, casework, and algebra, along with some confusing remnants from `mathlib` and casting obligations.] (This is a very long, complex sentence with multiple clauses and ideas. Could be split for clarity.) | Confidence: likely | Severity: medium\n- Line 32: [$`n`th Hilbert curve, take 4 copies of the $`n-1`th Hilbert curve and stitch them together.] (Missing opening backtick for `n` and `n-1`.) | Confidence: certain | Severity: medium\n- Line 32: [By hypothesis, we'll depict the curve for the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.] (Redundant \"to the right\". Should be \"ending on the right at...\") | Confidence: certain | Severity: medium\n- Line 53: [`2^(n-1)`] (should be `$2^{n-1}`$) | Confidence: certain | Severity: high\n- Line 53: [`H_n`] (should likely be `H_{n-1}` based on other terms in the equation) | Confidence: likely | Severity: high\n- Line 71: [`H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`] (Missing and misplaced closing parenthesis for the entire expression. Should be at the very end.) | Confidence: certain | Severity: high\n- Line 73: [`H_i`] (should be `H_n` for consistency with the rest of the definition) | Confidence: certain | Severity: high\n- Line 74: [`H_i`] (should be `H_n` for consistency with the rest of the definition) | Confidence: certain | Severity: high\n- Line 74: [`H_n(i)` is only one block off from $`H_i(i + 1)`.] (Should be `H_n(i+1)` not `H_i(i+1)` for consistency) | Confidence: certain | Severity: high\n- Line 74: [The sentence structure is a bit clunky. \"From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.\"] (Can be rephrased for better flow, e.g., \"From our pictures, it's also clear that the curve is continuous and, furthermore, does not move significantly\u2014$`H_n(i)` is only one block away from $`H_n(i + 1)`.\") | Confidence: likely | Severity: medium\n- Line 79: [picture before] (Consider \"previous picture\") | Confidence: likely | Severity: low\n- Line 90: [as the Hilbert curve squares decrease in size.] (Could be \"as the Hilbert curve's squares decrease in size.\" or \"as the size of the Hilbert curve squares decreases.\") | Confidence: likely | Severity: low",
+          "issues_found": 18,
+          "issues": [
+            {
+              "text": "$`\\LaTeX`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 1,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "`$\\LaTeX$`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 1,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "that is simultaneously a curve and completely fills the square $`[0, 1",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "informal proof",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "others.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "Given that correctness of the Hilbert curve needs such depth",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "HTML generation tool. More importantly, I'll also tell you about the other interesting facts you learn by thinking hard about every detail while coding a formalization, such as Holder continuity, computability, partial invertibility, etc. Despite disappointing AI provers, promising inline visualizations with ProofWidgets, and our lovely library of math `mathlib`, the challenging gaps left by spatial intuition leave a lot of gnarly induction, casework, and algebra, along with some confusing remnants from `mathlib` and casting obligations.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 12,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "$`n`th Hilbert curve, take 4 copies of the $`n-1`th Hilbert curve and stitch them together.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 32,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "By hypothesis, we'll depict the curve for the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 32,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "medium"
+            },
+            {
+              "text": "`2^(n-1)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "`H_n`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "high"
+            },
+            {
+              "text": "`H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 71,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "`H_i`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 73,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "`H_i`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "The sentence structure is a bit clunky. \"From our pictures, it's also clear that the curve is continuous and furthermore doesn't move that much--$`H_n(i)` is only one block off from $`H_i(i + 1)`.\"",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "picture before",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 79,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            },
+            {
+              "text": "as the Hilbert curve squares decrease in size.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 90,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "low"
+            }
+          ]
+        },
+        {
+          "trial": 7,
+          "response": "- Line 53: [(2^n - 1, 2^(n-1) - 1)] (Should be `(2^n - 1, 2^n - 1)` based on context and common mathematical notation for square coordinates. It seems like a typo, the `n-1` for the second coordinate) | Confidence: very likely | Severity: medium\n- Line 53: [2^(n-1)})) ] (Space between `2^(n-1)}}` and `)`) | Confidence: certain | Severity: low\n- Line 74: [H_i] (Should be `H_n` for consistency) | Confidence: very likely | Severity: high",
+          "issues_found": 3,
+          "issues": [
+            {
+              "text": "(2^n - 1, 2^(n-1) - 1)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            },
+            {
+              "text": "2^(n-1)})) ",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "H_i",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "trial": 8,
+          "response": "- Line 7: [informal proof] (It should be \"an informal proof\", not \"a full informal proof\") | Confidence: likely | Severity: medium\n- Line 7: [others. Given] (Missing space between \"others.\" and \"Given\") | Confidence: certain | Severity: high\n- Line 12: [Holder] (It should be \"H\u00f6lder\", as in Otto H\u00f6lder.) | Confidence: very likely | Severity: medium\n- Line 32: [of the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.] (This sentence is repetitive. \"ending on the right to the right\" should be \"ending on the right.\") | Confidence: likely | Severity: medium\n- Line 53: [(2^n - 1, 2^(n-1) - 1)] (It should be (2^n - 1, 2^n - 1) or (2^n - 1, 2^(n-1) + (2^n-1) - 1)) | Confidence: likely | Severity: medium\n- Line 74: [$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`] (It should be $`H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)` instead of $`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`. The variable for the index of H is `n`, not `i`.) | Confidence: certain | Severity: high\n- Line 74: [$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`] (It should be $`H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)` instead of $`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`. The variable for the index of H is n, not i.) | Confidence: certain | Severity: high\n- Line 74: [$`H_n(i)` is only one block off from $`H_i(i + 1)`] (It should be \"H_n(i+1)\" instead of \"H_i(i+1)\") | Confidence: certain | Severity: high\n- Line 74: [$`H_n(i)` is only one block off from $`H_i(i + 1)`.] (The variable for the index of H is n, not i.) | Confidence: certain | Severity: high",
+          "issues_found": 9,
+          "issues": [
+            {
+              "text": "informal proof",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "others. Given",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "Holder",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 12,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            },
+            {
+              "text": "of the $`n-1`th iteration as a generic shape starting at $`(0,0)` and ending on the right to the right at $`(2^{n-1}, 0)`.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 32,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "(2^n - 1, 2^(n-1) - 1)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            }
+          ]
+        },
+        {
+          "trial": 9,
+          "response": "- Line 53: [(2^n - 1, 2^(n-1) - 1)] (mathematical notation error - should be $`(2^n - 1, 2^{n-1} - 1)`$) | Confidence: very likely | Severity: high\n- Line 53: [2^(n-1)})) ] (mathematical notation error - should be $`2^{2(n-1)})`$) | Confidence: very likely | Severity: high\n- Line 74: [H_i(i + 1)] (should be $`H_n(i + 1)`$) | Confidence: very likely | Severity: medium",
+          "issues_found": 3,
+          "issues": [
+            {
+              "text": "(2^n - 1, 2^(n-1) - 1)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "2^(n-1)})) ",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 53,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "high"
+            },
+            {
+              "text": "H_i(i + 1)",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "very likely",
+              "severity": "medium"
+            }
+          ]
+        },
+        {
+          "trial": 10,
+          "response": "- Line 7: [square $`[0, 1] \\times [0, 1]`.] (Punctuation inside markup) | Confidence: likely | Severity: medium\n- Line 7: [full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others.] (Run-on sentence) | Confidence: likely | Severity: medium\n- Line 7: [correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.] (Run-on sentence) | Confidence: likely | Severity: medium\n- Line 9: [::::blob hilbert_curve_123] (Missing new line character) | Confidence: certain | Severity: low\n- Line 47: [$`H_n : \\mathbb{N} \\to \\mathbb{N} \\times \\mathbb{N}`] ($H_n$ and $H_n$ is not a valid markdown format) | Confidence: certain | Severity: low\n- Line 50: [$`swap(H_{n-1}(i)) &\\text{ if } i < 2^{2(n-1)} \\\\] (Missing a `}` in the LaTeX to signify the end of the inline maths and before starting the `]`.) | Confidence: likely | Severity: medium\n- Line 71: [$`\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`] (Missing a `}` at the end of the LaTeX expression.) | Confidence: likely | Severity: medium\n- Line 73: [$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`] (It should be $H_n$ instead of $H_i$) | Confidence: certain | Severity: high\n- Line 73: [$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`] (A `}` is missing at the end of the LaTeX expression.) | Confidence: likely | Severity: medium\n- Line 74: [$`H_n(i)` is only one block off from $`H_i(i + 1)`.] (It should be $H_n$ instead of $H_i$) | Confidence: certain | Severity: high",
+          "issues_found": 10,
+          "issues": [
+            {
+              "text": "square $`[0, 1",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "full informal proof requires touching on uniform convergence and Cauchy sequences, but I hope the gist is understandable to others.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "correctness of the Hilbert curve needs such depth, it seemed like an informative test case to formalize in Lean, so we can see the difference in theory versus application.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 7,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "::::blob hilbert_curve_123",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 9,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`H_n : \\mathbb{N} \\to \\mathbb{N} \\times \\mathbb{N}`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 47,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "low"
+            },
+            {
+              "text": "$`swap(H_{n-1}(i)) &\\text{ if } i < 2^{2(n-1)} \\\\",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 50,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "$`\\tilde{H}_n(t) = \\frac{1}{2^n} \\left( (t \\cdot 2^{2n} - \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2n} \\rfloor + 1) + (1 - t \\cdot 2^{2n} + \\lfloor t \\cdot 2^{2n} \\rfloor) H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor) \\right)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 71,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 73,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            },
+            {
+              "text": "$`\\tilde{H}_n(t) = \\frac{1}{2^n} L(H_n(\\lfloor t \\cdot 2^{2 n} \\rfloor), H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1), t \\cdot 2^{2 n} - \\lfloor t \\cdot 2^{2 n} \\rfloor)`",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 73,
+              "strategy": "line_citations_categorical",
+              "confidence": "likely",
+              "severity": "medium"
+            },
+            {
+              "text": "$`H_n(i)` is only one block off from $`H_i(i + 1)`.",
+              "type": "typo",
+              "explanation": "Found via line citation",
+              "line": 74,
+              "strategy": "line_citations_categorical",
+              "confidence": "certain",
+              "severity": "high"
+            }
+          ]
+        }
+      ]
+    }
+  ],
+  "quality_analysis": [
+    {
+      "name": "Arrow + Line citations (3-level, certain)",
+      "filter": "certain",
+      "confidence_levels": "3-level",
+      "base_name": "Arrow + Line citations",
+      "recall": 1.0,
+      "precision": 0.4444444444444444,
+      "f1": 0.6153846153846153,
+      "real": 4,
+      "false": 1,
+      "unknown": 4,
+      "total_flagged": 9
+    },
+    {
+      "name": "Arrow + Line citations (3-level, very likely+certain)",
+      "filter": "very likely+certain",
+      "confidence_levels": "3-level",
+      "base_name": "Arrow + Line citations",
+      "recall": 1.0,
+      "precision": 0.4,
+      "f1": 0.5714285714285715,
+      "real": 4,
+      "false": 1,
+      "unknown": 5,
+      "total_flagged": 10
+    },
+    {
+      "name": "Arrow + Line citations (4-level, all)",
+      "filter": "all",
+      "confidence_levels": "4-level",
+      "base_name": "Arrow + Line citations",
+      "recall": 1.0,
+      "precision": 0.36363636363636365,
+      "f1": 0.5333333333333333,
+      "real": 4,
+      "false": 1,
+      "unknown": 6,
+      "total_flagged": 11
+    },
+    {
+      "name": "Arrow + Line citations (4-level, very likely+certain)",
+      "filter": "very likely+certain",
+      "confidence_levels": "4-level",
+      "base_name": "Arrow + Line citations",
+      "recall": 1.0,
+      "precision": 0.36363636363636365,
+      "f1": 0.5333333333333333,
+      "real": 4,
+      "false": 1,
+      "unknown": 6,
+      "total_flagged": 11
+    },
+    {
+      "name": "Arrow + Line citations (4-level, certain)",
+      "filter": "certain",
+      "confidence_levels": "4-level",
+      "base_name": "Arrow + Line citations",
+      "recall": 1.0,
+      "precision": 0.36363636363636365,
+      "f1": 0.5333333333333333,
+      "real": 4,
+      "false": 1,
+      "unknown": 6,
+      "total_flagged": 11
+    },
+    {
+      "name": "Arrow + Structured (3-level, certain)",
+      "filter": "certain",
+      "confidence_levels": "3-level",
+      "base_name": "Arrow + Structured",
+      "recall": 1.0,
+      "precision": 0.3076923076923077,
+      "f1": 0.47058823529411764,
+      "real": 4,
+      "false": 5,
+      "unknown": 4,
+      "total_flagged": 13
+    },
+    {
+      "name": "Arrow + Structured (3-level, all)",
+      "filter": "all",
+      "confidence_levels": "3-level",
+      "base_name": "Arrow + Structured",
+      "recall": 1.0,
+      "precision": 0.26666666666666666,
+      "f1": 0.4210526315789474,
+      "real": 4,
+      "false": 5,
+      "unknown": 6,
+      "total_flagged": 15
+    },
+    {
+      "name": "Arrow + Structured (3-level, very likely+certain)",
+      "filter": "very likely+certain",
+      "confidence_levels": "3-level",
+      "base_name": "Arrow + Structured",
+      "recall": 1.0,
+      "precision": 0.26666666666666666,
+      "f1": 0.4210526315789474,
+      "real": 4,
+      "false": 5,
+      "unknown": 6,
+      "total_flagged": 15
+    },
+    {
+      "name": "Arrow + Line citations (3-level, all)",
+      "filter": "all",
+      "confidence_levels": "3-level",
+      "base_name": "Arrow + Line citations",
+      "recall": 1.0,
+      "precision": 0.21052631578947367,
+      "f1": 0.34782608695652173,
+      "real": 4,
+      "false": 3,
+      "unknown": 12,
+      "total_flagged": 19
+    },
+    {
+      "name": "Arrow + Structured (4-level, certain)",
+      "filter": "certain",
+      "confidence_levels": "4-level",
+      "base_name": "Arrow + Structured",
+      "recall": 1.0,
+      "precision": 0.19047619047619047,
+      "f1": 0.32,
+      "real": 4,
+      "false": 6,
+      "unknown": 11,
+      "total_flagged": 21
+    },
+    {
+      "name": "Arrow + Structured (4-level, very likely+certain)",
+      "filter": "very likely+certain",
+      "confidence_levels": "4-level",
+      "base_name": "Arrow + Structured",
+      "recall": 1.0,
+      "precision": 0.18181818181818182,
+      "f1": 0.3076923076923077,
+      "real": 4,
+      "false": 6,
+      "unknown": 12,
+      "total_flagged": 22
+    },
+    {
+      "name": "Arrow + Structured (4-level, all)",
+      "filter": "all",
+      "confidence_levels": "4-level",
+      "base_name": "Arrow + Structured",
+      "recall": 1.0,
+      "precision": 0.16666666666666666,
+      "f1": 0.2857142857142857,
+      "real": 4,
+      "false": 6,
+      "unknown": 14,
+      "total_flagged": 24
+    }
+  ],
+  "known_real_errors": [
+    32,
+    73,
+    74,
+    53
+  ],
+  "known_false_positives": [
+    1,
+    49,
+    50,
+    51,
+    52,
+    63
+  ]
+}
