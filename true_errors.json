@@ -1,0 +1,65 @@
+{
+  "errors": [
+    {
+      "line": 12,
+      "text": "Holder continuity",
+      "issue": "Should be 'Hölder' with umlaut in formal mathematical writing (though ASCII 'Holder' is sometimes acceptable)",
+      "category": "spelling"
+    },
+    {
+      "line": 28,
+      "text": "which is really all you need",
+      "issue": "Subject-verb agreement error: 'definitions' (plural) requires 'are' not 'is'",
+      "category": "grammar"
+    },
+    {
+      "line": 32,
+      "text": "ending on the right to the right",
+      "issue": "Redundant/awkward phrasing - should be 'ending on the right' or 'ending to the right'",
+      "category": "grammar"
+    },
+    {
+      "line": 53,
+      "text": "2^(n-1) - 1",
+      "issue": "Missing LaTeX braces: should be '2^{n-1}'",
+      "category": "typo"
+    },
+    {
+      "line": 53,
+      "text": "2^{2^(n-1)}",
+      "issue": "Should be '2^{2(n-1)}' to match pattern in lines 50-52 (multiplication not exponentiation)",
+      "category": "typo"
+    },
+    {
+      "line": 53,
+      "text": "H_n(i - 3 \\cdot 2^{2^(n-1)})",
+      "issue": "Should be 'H_{n-1}' to match pattern in lines 50-52",
+      "category": "typo"
+    },
+    {
+      "line": 73,
+      "text": "H_i(\\lfloor t \\cdot 2^{2 n} \\rfloor + 1)",
+      "issue": "Should be 'H_n' - inconsistent subscript",
+      "category": "typo"
+    },
+    {
+      "line": 74,
+      "text": "H_i(i + 1)",
+      "issue": "Should be 'H_n(i + 1)' - inconsistent subscript",
+      "category": "typo"
+    },
+    {
+      "line": 63,
+      "text": "to get a curve $`\\mathbb{R} \\to \\mathbb{R}`",
+      "issue": "Type signature error: should be '\\mathbb{R} \\to \\mathbb{R}^2' since the curve maps to 2D space",
+      "category": "typo"
+    },
+    {
+      "line": 70,
+      "text": "$`\\tilde{H}_n : \\mathbb{R} \\to \\mathbb{R}`",
+      "issue": "Type signature error: should be '\\mathbb{R} \\to \\mathbb{R}^2' since the curve maps to 2D space",
+      "category": "typo"
+    }
+  ],
+  "notes": "These are ALL potential errors found in first 100 lines prioritizing recall over precision. Some (like 'Holder' vs 'Hölder') may be acceptable in certain contexts."
+}

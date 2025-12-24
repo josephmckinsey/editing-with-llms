@@ -1,0 +1,1034 @@
+[
+  {
+    "config_idx": 29,
+    "config": {
+      "arrow_format": true,
+      "structured_output": false,
+      "avoid_style": true,
+      "scope_restriction": true,
+      "use_confidence": true,
+      "prioritize_precision": false,
+      "use_reasoning": false
+    },
+    "predicted_precision": 0.6339530209372239,
+    "predicted_std": 0.029222659267411147,
+    "actual_precision": 0.1,
+    "actual_std": 0.30779350562554625,
+    "actual_recall": 0.01875,
+    "trials": [
+      {
+        "trial": 1,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 2,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 3,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 4,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 5,
+        "issues_found": 2,
+        "detected_lines": [
+          73,
+          74
+        ],
+        "true_positives": [
+          73,
+          74
+        ],
+        "false_positives": [],
+        "precision": 1.0,
+        "recall": 0.25
+      },
+      {
+        "trial": 6,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 7,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 8,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 9,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 10,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 11,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 12,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 13,
+        "issues_found": 1,
+        "detected_lines": [
+          53
+        ],
+        "true_positives": [
+          53
+        ],
+        "false_positives": [],
+        "precision": 1.0,
+        "recall": 0.125
+      },
+      {
+        "trial": 14,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 15,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 16,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 17,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 18,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 19,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 20,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      }
+    ]
+  },
+  {
+    "config_idx": 61,
+    "config": {
+      "arrow_format": true,
+      "structured_output": false,
+      "avoid_style": true,
+      "scope_restriction": true,
+      "use_confidence": true,
+      "prioritize_precision": true,
+      "use_reasoning": false
+    },
+    "predicted_precision": 0.6325287259509521,
+    "predicted_std": 0.029097328269819457,
+    "actual_precision": 0.05,
+    "actual_std": 0.22360679774997896,
+    "actual_recall": 0.01875,
+    "trials": [
+      {
+        "trial": 1,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 2,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 3,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 4,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 5,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 6,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 7,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 8,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 9,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 10,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 11,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 12,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 13,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 14,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 15,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 16,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 17,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 18,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 19,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 20,
+        "issues_found": 5,
+        "detected_lines": [
+          73,
+          74,
+          53
+        ],
+        "true_positives": [
+          73,
+          74,
+          53
+        ],
+        "false_positives": [],
+        "precision": 1.0,
+        "recall": 0.375
+      }
+    ]
+  },
+  {
+    "config_idx": 21,
+    "config": {
+      "arrow_format": true,
+      "structured_output": false,
+      "avoid_style": true,
+      "scope_restriction": false,
+      "use_confidence": true,
+      "prioritize_precision": false,
+      "use_reasoning": false
+    },
+    "predicted_precision": 0.6325101251847386,
+    "predicted_std": 0.02907642584830244,
+    "actual_precision": 0.0,
+    "actual_std": 0.0,
+    "actual_recall": 0.0,
+    "trials": [
+      {
+        "trial": 1,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 2,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 3,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 4,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 5,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 6,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 7,
+        "issues_found": 1,
+        "detected_lines": [
+          14
+        ],
+        "true_positives": [],
+        "false_positives": [
+          14
+        ],
+        "precision": 0.0,
+        "recall": 0.0
+      },
+      {
+        "trial": 8,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 9,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 10,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 11,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 12,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 13,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 14,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 15,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 16,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 17,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 18,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 19,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 20,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      }
+    ]
+  },
+  {
+    "config_idx": 53,
+    "config": {
+      "arrow_format": true,
+      "structured_output": false,
+      "avoid_style": true,
+      "scope_restriction": false,
+      "use_confidence": true,
+      "prioritize_precision": true,
+      "use_reasoning": false
+    },
+    "predicted_precision": 0.6308885079693255,
+    "predicted_std": 0.028950185920244623,
+    "actual_precision": 0.025,
+    "actual_std": 0.11180339887498948,
+    "actual_recall": 0.0125,
+    "trials": [
+      {
+        "trial": 1,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 2,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 3,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 4,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 5,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 6,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 7,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 8,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 9,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 10,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 11,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 12,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 13,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 14,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 15,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 16,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 17,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 18,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 19,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 20,
+        "issues_found": 4,
+        "detected_lines": [
+          73,
+          1,
+          50,
+          12
+        ],
+        "true_positives": [
+          73,
+          12
+        ],
+        "false_positives": [
+          1,
+          50
+        ],
+        "precision": 0.5,
+        "recall": 0.25
+      }
+    ]
+  },
+  {
+    "config_idx": 25,
+    "config": {
+      "arrow_format": true,
+      "structured_output": false,
+      "avoid_style": false,
+      "scope_restriction": true,
+      "use_confidence": true,
+      "prioritize_precision": false,
+      "use_reasoning": false
+    },
+    "predicted_precision": 0.6273881811630767,
+    "predicted_std": 0.028686950430762827,
+    "actual_precision": 0.05,
+    "actual_std": 0.22360679774997896,
+    "actual_recall": 0.00625,
+    "trials": [
+      {
+        "trial": 1,
+        "issues_found": 1,
+        "detected_lines": [
+          53
+        ],
+        "true_positives": [
+          53
+        ],
+        "false_positives": [],
+        "precision": 1.0,
+        "recall": 0.125
+      },
+      {
+        "trial": 2,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 3,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 4,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 5,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 6,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 7,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 8,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 9,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 10,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 11,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 12,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 13,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 14,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 15,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 16,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 17,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 18,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 19,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      },
+      {
+        "trial": 20,
+        "issues_found": 0,
+        "detected_lines": [],
+        "true_positives": [],
+        "false_positives": [],
+        "precision": 0,
+        "recall": 0.0
+      }
+    ]
+  }
+]

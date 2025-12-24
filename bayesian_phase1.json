@@ -1,0 +1,2825 @@
+{
+  "phase": 1,
+  "num_samples": 100,
+  "results": [
+    {
+      "config_index": 121,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 6,
+      "detected_lines": [
+        32,
+        7,
+        73,
+        42,
+        74,
+        53
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        53
+      ],
+      "false_positives": [
+        42,
+        7
+      ],
+      "precision": 0.6666666666666666,
+      "recall": 0.5
+    },
+    {
+      "config_index": 81,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 103,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 9,
+      "detected_lines": [
+        32,
+        97,
+        7,
+        73,
+        74,
+        12,
+        14,
+        53,
+        28
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        12,
+        53,
+        28
+      ],
+      "false_positives": [
+        97,
+        14,
+        7
+      ],
+      "precision": 0.6666666666666666,
+      "recall": 0.75
+    },
+    {
+      "config_index": 100,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 17,
+      "detected_lines": [
+        32,
+        73,
+        12,
+        78,
+        80,
+        53
+      ],
+      "true_positives": [
+        32,
+        73,
+        12,
+        53
+      ],
+      "false_positives": [
+        80,
+        78
+      ],
+      "precision": 0.6666666666666666,
+      "recall": 0.5
+    },
+    {
+      "config_index": 57,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 40,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 5,
+      "detected_lines": [
+        32,
+        80,
+        12,
+        7
+      ],
+      "true_positives": [
+        32,
+        12
+      ],
+      "false_positives": [
+        80,
+        7
+      ],
+      "precision": 0.5,
+      "recall": 0.25
+    },
+    {
+      "config_index": 126,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 4,
+      "detected_lines": [
+        32,
+        12,
+        28
+      ],
+      "true_positives": [
+        32,
+        12,
+        28
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.375
+    },
+    {
+      "config_index": 42,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 17,
+      "detected_lines": [
+        32,
+        1,
+        97,
+        70,
+        7,
+        74,
+        12,
+        47,
+        48,
+        55,
+        57,
+        90,
+        63
+      ],
+      "true_positives": [
+        32,
+        70,
+        74,
+        12,
+        63
+      ],
+      "false_positives": [
+        1,
+        97,
+        7,
+        47,
+        48,
+        55,
+        57,
+        90
+      ],
+      "precision": 0.38461538461538464,
+      "recall": 0.625
+    },
+    {
+      "config_index": 125,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 6,
+      "detected_lines": [
+        32,
+        73,
+        74,
+        12,
+        53,
+        28
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        12,
+        53,
+        28
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.75
+    },
+    {
+      "config_index": 69,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 9,
+      "detected_lines": [
+        32,
+        97,
+        37,
+        71,
+        74,
+        12,
+        53,
+        28
+      ],
+      "true_positives": [
+        32,
+        74,
+        12,
+        53,
+        28
+      ],
+      "false_positives": [
+        97,
+        37,
+        71
+      ],
+      "precision": 0.625,
+      "recall": 0.625
+    },
+    {
+      "config_index": 62,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 3,
+      "detected_lines": [
+        1
+      ],
+      "true_positives": [],
+      "false_positives": [
+        1
+      ],
+      "precision": 0.0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 127,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 7,
+      "detected_lines": [
+        32,
+        73,
+        74,
+        51,
+        53,
+        63
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        53,
+        63
+      ],
+      "false_positives": [
+        51
+      ],
+      "precision": 0.8333333333333334,
+      "recall": 0.625
+    },
+    {
+      "config_index": 21,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 38,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 10,
+      "detected_lines": [
+        1,
+        7,
+        71,
+        73,
+        49,
+        55,
+        57,
+        63
+      ],
+      "true_positives": [
+        73,
+        63
+      ],
+      "false_positives": [
+        1,
+        71,
+        7,
+        49,
+        55,
+        57
+      ],
+      "precision": 0.25,
+      "recall": 0.25
+    },
+    {
+      "config_index": 101,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 47,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 6,
+      "detected_lines": [
+        32,
+        74,
+        53,
+        7
+      ],
+      "true_positives": [
+        32,
+        74,
+        53
+      ],
+      "false_positives": [
+        7
+      ],
+      "precision": 0.75,
+      "recall": 0.375
+    },
+    {
+      "config_index": 59,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 5,
+      "detected_lines": [
+        32,
+        7,
+        73,
+        74,
+        53
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        53
+      ],
+      "false_positives": [
+        7
+      ],
+      "precision": 0.8,
+      "recall": 0.5
+    },
+    {
+      "config_index": 126,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 5,
+      "detected_lines": [
+        74,
+        12
+      ],
+      "true_positives": [
+        74,
+        12
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.25
+    },
+    {
+      "config_index": 112,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 3,
+      "detected_lines": [
+        32,
+        12
+      ],
+      "true_positives": [
+        32,
+        12
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.25
+    },
+    {
+      "config_index": 54,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 1,
+      "detected_lines": [
+        74
+      ],
+      "true_positives": [
+        74
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.125
+    },
+    {
+      "config_index": 47,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 4,
+      "detected_lines": [
+        74,
+        28,
+        53,
+        7
+      ],
+      "true_positives": [
+        74,
+        28,
+        53
+      ],
+      "false_positives": [
+        7
+      ],
+      "precision": 0.75,
+      "recall": 0.375
+    },
+    {
+      "config_index": 110,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 1,
+      "detected_lines": [
+        12
+      ],
+      "true_positives": [
+        12
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.125
+    },
+    {
+      "config_index": 64,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 7,
+      "detected_lines": [
+        70,
+        74,
+        12,
+        53,
+        28
+      ],
+      "true_positives": [
+        70,
+        74,
+        12,
+        53,
+        28
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.625
+    },
+    {
+      "config_index": 26,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 5,
+      "detected_lines": [
+        1,
+        74,
+        12
+      ],
+      "true_positives": [
+        74,
+        12
+      ],
+      "false_positives": [
+        1
+      ],
+      "precision": 0.6666666666666666,
+      "recall": 0.25
+    },
+    {
+      "config_index": 115,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 10,
+      "detected_lines": [
+        32,
+        74,
+        12,
+        14,
+        53,
+        62
+      ],
+      "true_positives": [
+        32,
+        74,
+        12,
+        53
+      ],
+      "false_positives": [
+        62,
+        14
+      ],
+      "precision": 0.6666666666666666,
+      "recall": 0.5
+    },
+    {
+      "config_index": 40,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 12,
+      "detected_lines": [
+        32,
+        1,
+        99,
+        5,
+        7,
+        74,
+        12,
+        14,
+        57,
+        90,
+        28,
+        61
+      ],
+      "true_positives": [
+        32,
+        74,
+        12,
+        28
+      ],
+      "false_positives": [
+        1,
+        99,
+        5,
+        7,
+        14,
+        57,
+        90,
+        61
+      ],
+      "precision": 0.3333333333333333,
+      "recall": 0.5
+    },
+    {
+      "config_index": 62,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 16,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 4,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 49,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 92,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 89,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 12,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 2,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 11,
+      "detected_lines": [
+        1,
+        97,
+        7,
+        57,
+        90,
+        63
+      ],
+      "true_positives": [
+        63
+      ],
+      "false_positives": [
+        1,
+        97,
+        7,
+        57,
+        90
+      ],
+      "precision": 0.16666666666666666,
+      "recall": 0.125
+    },
+    {
+      "config_index": 4,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 57,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 73,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 6,
+      "detected_lines": [
+        32,
+        74,
+        12,
+        28
+      ],
+      "true_positives": [
+        32,
+        74,
+        12,
+        28
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.5
+    },
+    {
+      "config_index": 41,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 2,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 25,
+      "detected_lines": [
+        32,
+        1,
+        97,
+        70,
+        7,
+        71,
+        72,
+        74,
+        73,
+        47,
+        48,
+        49,
+        57,
+        90,
+        63
+      ],
+      "true_positives": [
+        32,
+        70,
+        73,
+        74,
+        63
+      ],
+      "false_positives": [
+        1,
+        97,
+        71,
+        72,
+        7,
+        47,
+        48,
+        49,
+        57,
+        90
+      ],
+      "precision": 0.3333333333333333,
+      "recall": 0.625
+    },
+    {
+      "config_index": 18,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 110,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 12,
+      "detected_lines": [
+        32,
+        74,
+        78,
+        47,
+        80,
+        82,
+        57,
+        90,
+        28,
+        61
+      ],
+      "true_positives": [
+        32,
+        74,
+        28
+      ],
+      "false_positives": [
+        78,
+        47,
+        80,
+        82,
+        57,
+        90,
+        61
+      ],
+      "precision": 0.3,
+      "recall": 0.375
+    },
+    {
+      "config_index": 26,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 6,
+      "detected_lines": [
+        1,
+        7,
+        74,
+        12,
+        28
+      ],
+      "true_positives": [
+        74,
+        12,
+        28
+      ],
+      "false_positives": [
+        1,
+        7
+      ],
+      "precision": 0.6,
+      "recall": 0.375
+    },
+    {
+      "config_index": 112,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 97,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 100,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 64,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 51,
+      "detected_lines": [
+        1,
+        3,
+        7,
+        12,
+        14,
+        16,
+        28,
+        32,
+        37,
+        42,
+        47,
+        48,
+        53,
+        55,
+        57,
+        61,
+        63,
+        65,
+        70,
+        72,
+        73,
+        74,
+        78,
+        80,
+        82,
+        90,
+        95,
+        97,
+        99
+      ],
+      "true_positives": [
+        32,
+        70,
+        73,
+        74,
+        12,
+        53,
+        28,
+        63
+      ],
+      "false_positives": [
+        1,
+        3,
+        7,
+        14,
+        16,
+        37,
+        42,
+        47,
+        48,
+        55,
+        57,
+        61,
+        65,
+        72,
+        78,
+        80,
+        82,
+        90,
+        95,
+        97,
+        99
+      ],
+      "precision": 0.27586206896551724,
+      "recall": 1.0
+    },
+    {
+      "config_index": 37,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 47,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 60,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 92,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 3,
+      "detected_lines": [
+        74,
+        12,
+        7
+      ],
+      "true_positives": [
+        74,
+        12
+      ],
+      "false_positives": [
+        7
+      ],
+      "precision": 0.6666666666666666,
+      "recall": 0.25
+    },
+    {
+      "config_index": 60,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 11,
+      "detected_lines": [
+        32,
+        1,
+        70,
+        7,
+        73,
+        14,
+        80,
+        57
+      ],
+      "true_positives": [
+        32,
+        73,
+        70
+      ],
+      "false_positives": [
+        1,
+        7,
+        14,
+        80,
+        57
+      ],
+      "precision": 0.375,
+      "recall": 0.375
+    },
+    {
+      "config_index": 43,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 3,
+      "detected_lines": [
+        32,
+        73,
+        53
+      ],
+      "true_positives": [
+        32,
+        73,
+        53
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.375
+    },
+    {
+      "config_index": 101,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 61,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 91,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 4,
+      "detected_lines": [
+        32,
+        73,
+        74,
+        53
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        53
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.5
+    },
+    {
+      "config_index": 45,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 69,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 72,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 34,
+      "detected_lines": [
+        32,
+        99,
+        37,
+        70,
+        7,
+        74,
+        12,
+        14,
+        47,
+        48,
+        80,
+        53,
+        57,
+        90,
+        28,
+        61
+      ],
+      "true_positives": [
+        32,
+        70,
+        74,
+        12,
+        53,
+        28
+      ],
+      "false_positives": [
+        99,
+        37,
+        7,
+        14,
+        47,
+        48,
+        80,
+        57,
+        90,
+        61
+      ],
+      "precision": 0.375,
+      "recall": 0.75
+    },
+    {
+      "config_index": 97,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 84,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 5,
+      "detected_lines": [
+        32,
+        73,
+        74,
+        12,
+        14
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        12
+      ],
+      "false_positives": [
+        14
+      ],
+      "precision": 0.8,
+      "recall": 0.5
+    },
+    {
+      "config_index": 103,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 19,
+      "detected_lines": [
+        32,
+        1,
+        3,
+        7,
+        73,
+        74,
+        12,
+        78,
+        81,
+        51,
+        52,
+        53,
+        57,
+        90,
+        28,
+        63
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        12,
+        53,
+        28,
+        63
+      ],
+      "false_positives": [
+        1,
+        3,
+        7,
+        78,
+        81,
+        51,
+        52,
+        57,
+        90
+      ],
+      "precision": 0.4375,
+      "recall": 0.875
+    },
+    {
+      "config_index": 23,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 2,
+      "detected_lines": [
+        74,
+        7
+      ],
+      "true_positives": [
+        74
+      ],
+      "false_positives": [
+        7
+      ],
+      "precision": 0.5,
+      "recall": 0.125
+    },
+    {
+      "config_index": 66,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 9,
+      "detected_lines": [
+        32,
+        70,
+        74,
+        12,
+        90,
+        28
+      ],
+      "true_positives": [
+        32,
+        70,
+        74,
+        12,
+        28
+      ],
+      "false_positives": [
+        90
+      ],
+      "precision": 0.8333333333333334,
+      "recall": 0.625
+    },
+    {
+      "config_index": 47,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 5,
+      "detected_lines": [
+        32,
+        1,
+        73,
+        53,
+        54
+      ],
+      "true_positives": [
+        32,
+        73,
+        53
+      ],
+      "false_positives": [
+        1,
+        54
+      ],
+      "precision": 0.6,
+      "recall": 0.375
+    },
+    {
+      "config_index": 81,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 32,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 15,
+      "detected_lines": [
+        32,
+        1,
+        70,
+        7,
+        71,
+        74,
+        12,
+        14,
+        80,
+        57
+      ],
+      "true_positives": [
+        32,
+        74,
+        12,
+        70
+      ],
+      "false_positives": [
+        1,
+        71,
+        7,
+        14,
+        80,
+        57
+      ],
+      "precision": 0.4,
+      "recall": 0.5
+    },
+    {
+      "config_index": 107,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 1,
+      "detected_lines": [
+        12
+      ],
+      "true_positives": [
+        12
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.125
+    },
+    {
+      "config_index": 60,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 67,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 13,
+      "detected_lines": [
+        32,
+        7,
+        73,
+        74,
+        12,
+        47,
+        53,
+        57,
+        28,
+        63
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        12,
+        53,
+        28,
+        63
+      ],
+      "false_positives": [
+        57,
+        47,
+        7
+      ],
+      "precision": 0.7,
+      "recall": 0.875
+    },
+    {
+      "config_index": 39,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 9,
+      "detected_lines": [
+        32,
+        1,
+        97,
+        73,
+        74,
+        53,
+        54,
+        55,
+        57
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        53
+      ],
+      "false_positives": [
+        1,
+        97,
+        54,
+        55,
+        57
+      ],
+      "precision": 0.4444444444444444,
+      "recall": 0.5
+    },
+    {
+      "config_index": 103,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 9,
+      "detected_lines": [
+        32,
+        7,
+        73,
+        74,
+        12,
+        53,
+        28
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        12,
+        53,
+        28
+      ],
+      "false_positives": [
+        7
+      ],
+      "precision": 0.8571428571428571,
+      "recall": 0.75
+    },
+    {
+      "config_index": 44,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 12,
+      "detected_lines": [
+        1,
+        3,
+        5,
+        73,
+        74,
+        12,
+        78,
+        49,
+        53,
+        90
+      ],
+      "true_positives": [
+        73,
+        74,
+        12,
+        53
+      ],
+      "false_positives": [
+        1,
+        3,
+        5,
+        78,
+        49,
+        90
+      ],
+      "precision": 0.4,
+      "recall": 0.5
+    },
+    {
+      "config_index": 9,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 116,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 10,
+      "detected_lines": [
+        32,
+        3,
+        70,
+        74,
+        12,
+        14,
+        63
+      ],
+      "true_positives": [
+        32,
+        70,
+        74,
+        12,
+        63
+      ],
+      "false_positives": [
+        3,
+        14
+      ],
+      "precision": 0.7142857142857143,
+      "recall": 0.625
+    },
+    {
+      "config_index": 102,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 37,
+      "detected_lines": [
+        1,
+        5,
+        7,
+        71,
+        73,
+        74,
+        12,
+        47,
+        49,
+        55,
+        57,
+        90,
+        61,
+        63
+      ],
+      "true_positives": [
+        73,
+        74,
+        12,
+        63
+      ],
+      "false_positives": [
+        1,
+        5,
+        71,
+        7,
+        47,
+        49,
+        55,
+        57,
+        90,
+        61
+      ],
+      "precision": 0.2857142857142857,
+      "recall": 0.5
+    },
+    {
+      "config_index": 28,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 108,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 17,
+      "detected_lines": [
+        32,
+        37,
+        70,
+        74,
+        12,
+        82,
+        57,
+        28,
+        61
+      ],
+      "true_positives": [
+        32,
+        70,
+        74,
+        12,
+        28
+      ],
+      "false_positives": [
+        57,
+        82,
+        61,
+        37
+      ],
+      "precision": 0.5555555555555556,
+      "recall": 0.625
+    },
+    {
+      "config_index": 0,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 15,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 1,
+      "detected_lines": [
+        74
+      ],
+      "true_positives": [
+        74
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.125
+    },
+    {
+      "config_index": 96,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 17,
+      "detected_lines": [
+        32,
+        99,
+        70,
+        7,
+        74,
+        12,
+        14,
+        47,
+        57,
+        90,
+        61
+      ],
+      "true_positives": [
+        32,
+        74,
+        12,
+        70
+      ],
+      "false_positives": [
+        99,
+        7,
+        14,
+        47,
+        57,
+        90,
+        61
+      ],
+      "precision": 0.36363636363636365,
+      "recall": 0.5
+    },
+    {
+      "config_index": 87,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 8,
+      "detected_lines": [
+        71,
+        73,
+        74,
+        12,
+        47,
+        53,
+        57
+      ],
+      "true_positives": [
+        73,
+        74,
+        12,
+        53
+      ],
+      "false_positives": [
+        57,
+        47,
+        71
+      ],
+      "precision": 0.5714285714285714,
+      "recall": 0.5
+    },
+    {
+      "config_index": 97,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 8,
+      "detected_lines": [
+        32,
+        73,
+        74,
+        12,
+        47
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        12
+      ],
+      "false_positives": [
+        47
+      ],
+      "precision": 0.8,
+      "recall": 0.5
+    },
+    {
+      "config_index": 81,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 126,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 7,
+      "detected_lines": [
+        32,
+        7,
+        73,
+        74,
+        12,
+        28
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        12,
+        28
+      ],
+      "false_positives": [
+        7
+      ],
+      "precision": 0.8333333333333334,
+      "recall": 0.625
+    },
+    {
+      "config_index": 5,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 52,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 106,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 13,
+      "detected_lines": [
+        32,
+        7,
+        71,
+        74,
+        12,
+        78,
+        82,
+        53,
+        57,
+        90,
+        28,
+        63
+      ],
+      "true_positives": [
+        32,
+        74,
+        12,
+        53,
+        28,
+        63
+      ],
+      "false_positives": [
+        71,
+        7,
+        78,
+        82,
+        57,
+        90
+      ],
+      "precision": 0.5,
+      "recall": 0.75
+    },
+    {
+      "config_index": 102,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 7,
+      "detected_lines": [
+        12,
+        70
+      ],
+      "true_positives": [
+        12,
+        70
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.25
+    },
+    {
+      "config_index": 42,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 8,
+      "detected_lines": [
+        1,
+        5,
+        7,
+        74,
+        12,
+        57,
+        59
+      ],
+      "true_positives": [
+        74,
+        12
+      ],
+      "false_positives": [
+        1,
+        5,
+        7,
+        57,
+        59
+      ],
+      "precision": 0.2857142857142857,
+      "recall": 0.25
+    },
+    {
+      "config_index": 62,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 9,
+      "detected_lines": [
+        32,
+        1,
+        70,
+        7,
+        74
+      ],
+      "true_positives": [
+        32,
+        74,
+        70
+      ],
+      "false_positives": [
+        1,
+        7
+      ],
+      "precision": 0.6,
+      "recall": 0.375
+    },
+    {
+      "config_index": 83,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 7,
+      "detected_lines": [
+        32,
+        73,
+        74,
+        12,
+        14,
+        53
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        12,
+        53
+      ],
+      "false_positives": [
+        14
+      ],
+      "precision": 0.8333333333333334,
+      "recall": 0.625
+    },
+    {
+      "config_index": 123,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 3,
+      "detected_lines": [
+        73,
+        74,
+        12
+      ],
+      "true_positives": [
+        73,
+        74,
+        12
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.375
+    },
+    {
+      "config_index": 23,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 4,
+      "detected_lines": [
+        32,
+        74,
+        53,
+        7
+      ],
+      "true_positives": [
+        32,
+        74,
+        53
+      ],
+      "false_positives": [
+        7
+      ],
+      "precision": 0.75,
+      "recall": 0.375
+    },
+    {
+      "config_index": 117,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 5,
+      "detected_lines": [
+        32,
+        73,
+        74,
+        53
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        53
+      ],
+      "false_positives": [],
+      "precision": 1.0,
+      "recall": 0.5
+    },
+    {
+      "config_index": 88,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": true
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 56,
+      "config": {
+        "arrow_format": false,
+        "structured_output": false,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 21,
+      "config": {
+        "arrow_format": true,
+        "structured_output": false,
+        "avoid_style": true,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": false,
+        "use_reasoning": false
+      },
+      "issues_found": 0,
+      "detected_lines": [],
+      "true_positives": [],
+      "false_positives": [],
+      "precision": 0,
+      "recall": 0.0
+    },
+    {
+      "config_index": 42,
+      "config": {
+        "arrow_format": false,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 10,
+      "detected_lines": [
+        1,
+        3,
+        99,
+        7,
+        71,
+        74,
+        12,
+        80,
+        57,
+        61
+      ],
+      "true_positives": [
+        74,
+        12
+      ],
+      "false_positives": [
+        1,
+        99,
+        3,
+        71,
+        7,
+        80,
+        57,
+        61
+      ],
+      "precision": 0.2,
+      "recall": 0.25
+    },
+    {
+      "config_index": 51,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": false,
+        "scope_restriction": false,
+        "use_confidence": true,
+        "prioritize_precision": true,
+        "use_reasoning": false
+      },
+      "issues_found": 5,
+      "detected_lines": [
+        73,
+        1,
+        74,
+        53
+      ],
+      "true_positives": [
+        73,
+        74,
+        53
+      ],
+      "false_positives": [
+        1
+      ],
+      "precision": 0.75,
+      "recall": 0.375
+    },
+    {
+      "config_index": 111,
+      "config": {
+        "arrow_format": true,
+        "structured_output": true,
+        "avoid_style": true,
+        "scope_restriction": true,
+        "use_confidence": false,
+        "prioritize_precision": true,
+        "use_reasoning": true
+      },
+      "issues_found": 7,
+      "detected_lines": [
+        32,
+        71,
+        73,
+        74,
+        12,
+        53,
+        28
+      ],
+      "true_positives": [
+        32,
+        73,
+        74,
+        12,
+        53,
+        28
+      ],
+      "false_positives": [
+        71
+      ],
+      "precision": 0.8571428571428571,
+      "recall": 0.75
+    }
+  ]
+}
