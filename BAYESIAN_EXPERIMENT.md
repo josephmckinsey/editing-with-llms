@@ -93,7 +93,7 @@ Config 106: Best F1 - structured + scope + reasoning
   Gemini 2.5 Pro      : P=0.951, R=0.400, F1=0.563
 ```
 
-This suggests that  usingconfig 98 was much better. I also would note that config 29 might have had
+This suggests that using config 106 was much better. I also would note that config 29 might have had
 parsing issues, because it spent a lot of tokens on thinking and then said no errors. In conclusion,
 the final output suggests that we should use
 - No line number arrows, use plain text only.
@@ -102,6 +102,8 @@ the final output suggests that we should use
 - Reasoning tokens improve precision and probably recall too.
 - Describing that the model should prioritize precision is helpful. 
 - Asking to restrict its answers to a specific scope produces better precision at a marginal cost to scope.
+
+I think that having the scope restriction on by default would be best here.
 
 Crucially, no configuration of Gemini 2.5 Flash seems to be sufficient to do these sort of basic typo checking operations on mathematical text, and even a conservative approach does not lead to good precision.
 
@@ -128,3 +130,28 @@ $p_{l, s} = \alpha + u_l + E + I$ if $l$ is this is the correct answer and
 $p_{l, s} = \alpha + u_l + E - I$ if this is an incorrect answer. I'd expect that most
 system prompts have a larger effect on $E$ than $I$, and that choosing a bigger model mainly
 impacts $I$ and not $E$.
+
+In general, we could come up with various different factors which we try and analyze this way,
+instead of just 1 or 2.
+
+## Alternative Methodologies
+
+Although we spent most of the effort here on calibrating precision and recall through Bayesian
+methods, we only get a small number of binary variables from each method call. Ideally, each
+call to the LLM should provide the maximum amount of information possible. I can think of a couple
+options here:
+1. Post-testing Survey
+
+After we test an LLM with a given prompt, we could also give it the true answers, then we can ask it
+what information would help it improve in the future. This could be taken from our config options,
+along with an optional write-in that we could analyze later.
+
+2. We could straight-up ask what option they would prefer best.
+
+Both options here could actually help us as well. I'd expect there to be a correlation
+between its actual task performance and the survey results, with some fixed errors
+for each config option. We could try estimating those errors while figuring out what the correlation is.
+
+Recall that in Bayesian methods, if you have more information with good assumptions, that
+cannot decrease the performance of your final estimator. More information, however uncorrelated,
+about things you want to estimate helps you.
