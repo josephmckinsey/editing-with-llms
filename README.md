@@ -4,13 +4,19 @@ Warning: A lot of this was written with AI. You have been warned.
 
 A command-line tool for analyzing and editing text files using large language models (LLMs). It provides several types of checks, including typo/grammar detection, clarity analysis, reader accessibility, value assessment, and function evaluation, all powered by the [llm](https://github.com/simonw/llm) Python library.
 
-## Features
-- **Typo/Grammar Check**: Detects typos, spelling mistakes, and grammatical errors.
-- **Clarity Check**: Identifies unclear or confusing sentences.
-- **Reader Accessibility**: Estimates whether a described reader will struggle to understand the text.
-- **Value Assessment**: Checks if the text provides value to a specific reader.
-- **Function Evaluation**: Assesses whether the text accomplishes its intended function (e.g., inform, convince, entertain).
-- **Guessing Tools**: Infers the likely function, value, or intended reader of a text.
+## Baked-in Prompts
+
+None of these prompts are instructed to make suggestions; ignore any suggestions that the LLM sneaks
+through.
+
+- **`typo`** - Spelling, grammar, and typo detection.
+- **`clarity`** - Identifies unclear or confusing sentences.
+- **`reader`** - Checks if text is accessible to a specific reader (e.g., "a beginner programmer"). Requires `reader` field in profile.
+- **`value`** - Assesses whether text provides value to the target reader. Requires `reader` field.
+- **`function`** - Checks if text accomplishes its intended function (inform, convince, entertain). Requires `reader` and `function` fields.
+- **`guess-function`** - Infers the text's intended purpose.
+- **`guess-value`** - Infers the main value or benefit for readers.
+- **`guess-reader`** - Infers the intended audience.
 
 ## Installation
 1. Clone this repository:
@@ -18,46 +24,60 @@ A command-line tool for analyzing and editing text files using large language mo
    git clone https://github.com/josephmckinsey/editing-with-llms
    cd editing-with-llms
    ```
-2. Install dependencies:
+2. Install:
    ```sh
-   pip install llm click
+   pip install .
    ```
 
 ## Usage
+
+1. Make an `.editing-config.yml` like in the repository:
+
+```yaml
+profiles:
+  quick-spell:
+    checks: [typo]
+    # Specify the model with name from `llm models list`.
+    model: openrouter/google/gemini-2.5-pro-preview
+
+  normal-reader:
+    reader: "a Bachelor's in mathematics who mostly knows what formal verification is"
+    checks: [reader, clarity, value]
+    model: openrouter/anthropic/claude-3.5-sonnet
+
+  math-doc:
+    checks: [typo]
+    model: openrouter/google/gemini-2.5-pro-preview
+    prompt_config:
+      scope_restriction: false  # Broader check
+    custom_instructions: |
+      Ignore LaTeX commands like \textbf, \cite, etc.
+      The terms "morphism", "functor", and "category" are intentional jargon.
+      Do not flag mathematical notation in $...$ blocks.
+
+  # Streaming output for these modes
+  guess-audience:
+    checks: [guess-reader, guess-function, guess-value]
+    model: gpt-4o-mini
+    output_format: streaming
+```
+
 Run the tool from the command line:
 
 ```sh
-python llm_typo_checker.py [OPTIONS] INPUT_FILE
+writing-buddy [OPTIONS] INPUT_FILE
 ```
 
 ### Options
-- `--check [typo|clarity|reader|value|function|guess-function|guess-value|guess-reader]`  
-  Type of check to perform (default: `typo`).
-- `--model MODEL`  
-  Model name or alias to use with llm (optional).
-- `--reader READER`  
-  Describe the intended reader for the 'reader', 'value', or 'function' check. Should complete the clause "from the perspective of..."
-- `--function FUNCTION`  
-  Describe the intended function for the 'function' check (e.g., inform, convince, entertain). Should complete the clause "{function} {reader}" or "{function} a general reader".
 
-### Example
-Check a file for typos:
-```sh
-python llm_typo_checker.py --check typo my_article.txt
-```
-
-Check for clarity issues:
-```sh
-python llm_typo_checker.py --check clarity my_article.txt
-```
-
-Assess accessibility for a beginner:
-```sh
-python llm_typo_checker.py --check reader --reader "a beginner Python programmer" my_article.txt
-```
-
-## Output
-Results are printed to the console and also written to `output.txt` in the current directory.
+- `--config PATH`: Path to config file (default: search for .editing-config.yaml)
+- `--model TEXT`: Override profile model
+- `--output-format [compiler|streaming|json]`: Override output format
+- `--no-scope-restriction`: Disable scope restriction
+- `--list-profiles`: List available profiles and exit
+- `--dry-run`: Print prompts without calling LLM
+- `--char-limit INTEGER`: Warn if input exceeds this many characters (default: 50000)
+- `--help`: Show this message and exit.
 
 ## License
 MIT License

@@ -18,11 +18,7 @@ class Issue:
 
 @dataclass
 class PromptConfig:
-    """Configuration for prompt generation based on Config 106 findings.
-
-    These settings are based on the Bayesian experiment results showing
-    Config 106 achieves 95% precision with Gemini 2.5 Pro.
-    """
+    """Configuration for prompt generation"""
 
     scope_restriction: bool = True  # Limit to spelling/grammar/typos
     prioritize_precision: bool = True  # Aim for >80% helpful
@@ -56,7 +52,9 @@ class CheckProfile:
     reader: Optional[str] = None  # Reader description for reader-focused checks
     function: Optional[str] = None  # Function description for function checks
     output_format: str = "compiler"  # "compiler", "streaming", or "json"
-    custom_instructions: Optional[str] = None  # Additional instructions for system prompt
+    custom_instructions: Optional[str] = (
+        None  # Additional instructions for system prompt
+    )
     prompt_config: PromptConfig = field(default_factory=PromptConfig)
 
     @staticmethod

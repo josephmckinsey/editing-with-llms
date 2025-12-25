@@ -30,8 +30,6 @@ def parse_structured_output(
 ) -> List[Issue]:
     """Parse structured output format (TEXT: / ISSUE: format).
 
-    This is the format used by Config 106 which achieved 95% precision.
-
     Args:
         response: LLM response text
         original_text: Original text being checked
@@ -62,7 +60,7 @@ def parse_structured_output(
                     confidence = int(match.group())
 
             # Compute line number from text snippet
-            # Config 106 uses plain text input, so we always compute line numbers
+            # We always have plain text input, so we always compute line numbers
             line_number = find_line_number(issue_data.get("text", ""), original_text)
 
             issues.append(

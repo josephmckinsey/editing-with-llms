@@ -10,11 +10,11 @@ def generate_system_prompt(
     function: str = None,
     custom_instructions: str = None,
 ) -> str:
-    """Generate system prompt based on check type and Config 106 findings.
+    """Generate system prompt from PromptConfig
 
     Args:
         check_type: Type of check (typo, clarity, reader, value, function, guess-*)
-        prompt_config: Config 106 settings
+        prompt_config: Config settings
         reader: Reader description (for reader-focused checks)
         function: Function description (for function checks)
         custom_instructions: Additional instructions to append to system prompt
@@ -49,18 +49,16 @@ def generate_system_prompt(
 
 
 def _generate_typo_prompt(config: PromptConfig) -> str:
-    """Generate typo check system prompt using Config 106 pattern."""
+    """Generate typo check system prompt."""
     base = "You are a proofreader. Carefully review the provided text for typos, spelling mistakes, and grammatical errors."
 
     instructions = []
 
-    # Scope restriction (Config 106: enabled)
     if config.scope_restriction:
         instructions.append(
             "Do not report perceived errors outside of spelling, grammar, or typos."
         )
 
-    # Prioritize precision (Config 106: enabled)
     if config.prioritize_precision:
         instructions.append(
             "Aim for more than 80% of your errors being helpful. Expect users to rerun later if they need to find new errors, so prioritize precision."
@@ -138,7 +136,7 @@ ISSUE: <brief explanation of why it may be difficult for the described reader>
 
 If there are no accessibility issues found for the described reader, say "There are no accessibility issues found for the described reader."
 """
-    
+
     full_prompt = base
     if instructions:
         full_prompt += "\n\n" + " ".join(instructions)
@@ -167,7 +165,6 @@ ISSUE: <brief explanation of why it may not be valuable for the described reader
 
 If the text is valuable throughout, say "The text provides value to its readers."
 """
-    
 
     full_prompt = base
     if instructions:
