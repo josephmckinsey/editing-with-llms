@@ -11,12 +11,16 @@ This is a focused, actionable plan based on user feedback and priorities.
 - ✅ Phase 2.1: Moved tests to tests/ directory
 - ✅ Testing: Tested proselint, pyspellchecker, language-tool-python on real docs
 - ✅ Testing: Updated test suite with synonym-based assertions
+- ✅ **Phase 0: Bayesian experiment testing 128 prompt combinations**
+  - ✅ Tested input formats (plain text vs arrow line numbers)
+  - ✅ Tested output formats (structured vs line citations)
+  - ✅ Tested 7 prompt factors with hierarchical Bayesian modeling
+  - ✅ Compared Gemini 2.5 Flash vs Pro performance
 
 **In Progress:**
-- 🔄 Phase 0: Need to create test_strategies.py for input/output testing
+- 🔄 Phase 1: Config file, compiler output, line number references
 
 **Not Started:**
-- ⏳ Phase 1: Config file, compiler output, line number references
 - ⏳ Phase 2.2-2.3: Full modular architecture, terminal output
 - ⏳ Phase 3: Hybrid checking, format-aware preprocessing
 
@@ -29,30 +33,54 @@ This is a focused, actionable plan based on user feedback and priorities.
 
 ---
 
-## Phase 0: Testing & Prototyping (DO THIS FIRST)
+## Phase 0: Testing & Prototyping ✅ COMPLETED
 
-Before committing to an architecture, test different approaches:
+**Methodology:** Ran rigorous Bayesian experiment testing 128 prompt combinations (2^7 factors) with hierarchical modeling.
+See `BAYESIAN_EXPERIMENT.md` for full details.
 
-### Input Format Strategies
-Test how to send text to LLM:
-1. **Line-numbered input**: Prepend `N→` to each line (like Claude Code's Read tool)
-2. **Structured markers**: Use XML-style tags for sections
-3. **Plain text with post-processing**: Send plain text, try to match LLM output back to source
+### Results
 
-### Output Parsing Strategies
-Test how to get consistent location data:
-1. **Request line citations**: Ask LLM to cite "Line N: [text]"
-2. **Structured output format**: Request specific format like "LINE: N\nTEXT: ...\nISSUE: ..."
-3. **JSON output**: Use prompt engineering to get JSON responses
-4. **Fuzzy text matching**: LLM returns text fragments, we match them to original
+**Best Configuration (Config 106):**
+```python
+PromptConfig(
+    use_arrow_format=False,           # ✅ Plain text input
+    use_structured_output=True,       # ✅ Structured format: TEXT/ISSUE
+    avoid_style=False,
+    scope_restriction=True,           # ✅ "Do not report errors outside spelling/grammar/typos"
+    use_confidence=False,             # ❌ Counter-productive
+    prioritize_precision=True,        # ✅ "Aim for >80% helpful, prioritize precision"
+    use_reasoning=True                # ✅ Enable reasoning tokens
+)
+```
 
-### Format Handling Test
-Test with actual documents (Markdown, LaTeX, Typst, Lean 4):
-1. **Prompt engineering only**: Instruct LLM to ignore code/commands
-2. **Pre-processing**: Strip code blocks/commands before sending
-3. **Hybrid**: Keep structure but mark ignorable sections
+**Performance (Gemini 2.5 Pro):**
+- **Precision: 95.1%** (only 1 in 20 flagged issues is false!)
+- Recall: 40.0% (finds ~half of errors)
+- F1: 0.563
 
-**Deliverable:** Create `test_strategies.py` that runs same document through different strategies and compare results.
+**Key Findings:**
+1. **Input format:** Plain text works best. Line numbers/arrows hurt performance.
+2. **Output format:** Structured format (TEXT/ISSUE fields) better than line citations.
+3. **Crucial factors:**
+   - Reasoning tokens (+0.79 effect)
+   - Structured output (+0.91 effect)
+   - Prioritize precision instruction (+0.12 effect)
+   - Scope restriction helps slightly
+4. **Counter-productive factors:**
+   - Confidence filtering (-1.08 effect) - removes too much
+   - Arrow line numbers (-0.79 effect)
+   - "Avoid style" direction (-0.47 effect)
+
+**Model Selection:**
+- ❌ Gemini 2.5 Flash: Max 63% precision, best is 40% recall (too conservative)
+- ✅ **Gemini 2.5 Pro: Production model** (95% precision with 40% recall)
+
+**Alternative config (Config 98)** for slightly higher recall:
+- Same as 106 but without `scope_restriction`
+- Precision: 85.6%, Recall: 46.9%, F1: 0.606
+
+**Implementation Decision:**
+Use Config 106 as default, with optional flag to disable scope restriction (Config 98) for broader checking.
 
 ---
 
@@ -84,10 +112,12 @@ test.md:42:1: reader: This paragraph assumes knowledge of monads.
 ```
 
 ### 1.3 Line Number References
-Based on Phase 0 testing results:
-- Implement chosen input format strategy
-- Implement chosen output parsing strategy
-- Create data model for issues
+Based on Phase 0 results:
+- ✅ **Input format:** Send plain text (no line numbers)
+- ✅ **Output format:** Request structured format with TEXT/ISSUE fields
+- **Parsing:** LLM provides TEXT snippet, we find line number via string matching
+- **Data model:** Issue with text, issue_type, explanation, line_number
+- **LLM options:** Enable `reasoning_max_tokens=2000` for Gemini models
 
 ---
 
