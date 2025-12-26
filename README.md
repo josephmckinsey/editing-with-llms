@@ -1,4 +1,4 @@
-# llm_typo_checker
+# writing-buddy
 
 Warning: A lot of this was written with AI. You have been warned.
 
