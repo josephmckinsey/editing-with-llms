@@ -173,20 +173,25 @@ def test_char_limit_warning(mock_confirm, runner):
         os.remove(temp_path)
 
 
-def test_streaming_multiple_checks_error(runner, temp_file, mock_llm_setup):
-    """Test that streaming format errors with multiple checks."""
-    _, _ = mock_llm_setup
+def test_streaming_multiple_checks(runner, temp_file, mock_llm_setup):
+    """Test that streaming format works with multiple checks."""
+    _, mock_model = mock_llm_setup
+    mock_model.prompt.side_effect = [
+        iter(["Check 1 output"]),
+        iter(["Check 2 output"]),
+        iter(["Check 3 output"]),
+    ]
 
     result = runner.invoke(
         main, ["bachelors-reader", "--output-format", "streaming", temp_file]
     )
 
-    assert result.exit_code == 1
-    assert "does not support multiple checks" in result.output
+    assert result.exit_code == 0
+    assert mock_model.prompt.call_count == 3
 
 
-def test_reasoning_tokens_for_gemini(runner, temp_file, mock_llm_setup, mock_llm_response):
-    """Test that reasoning tokens are enabled for Gemini models."""
+def test_reasoning_enabled(runner, temp_file, mock_llm_setup, mock_llm_response):
+    """Test that reasoning is enabled with effort parameter."""
     _, mock_model = mock_llm_setup
     mock_model.model_id = "openrouter/google/gemini-2.5-pro-preview"
     mock_model.prompt.return_value = iter([mock_llm_response])
@@ -195,8 +200,8 @@ def test_reasoning_tokens_for_gemini(runner, temp_file, mock_llm_setup, mock_llm
 
     assert result.exit_code == 0
     call_kwargs = mock_model.prompt.call_args.kwargs
-    assert "reasoning_max_tokens" in call_kwargs
-    assert call_kwargs["reasoning_max_tokens"] == 2000
+    assert "reasoning_effort" in call_kwargs
+    assert call_kwargs["reasoning_effort"] == "medium"
 
 
 def test_no_errors_found(runner, temp_file, mock_llm_setup):

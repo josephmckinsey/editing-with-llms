@@ -44,12 +44,13 @@ class StreamingFormatter:
         """
         self.output_file = output_file
 
-    def format_and_stream(self, response_stream, print_fn=print) -> str:
+    def format_and_stream(self, response_stream, print_fn=print, append=False) -> str:
         """Stream LLM response to console and collect output.
 
         Args:
             response_stream: Iterable of response chunks
             print_fn: Function to print output (default: print)
+            append: If True, append to file instead of overwriting
 
         Returns:
             Complete response text
@@ -61,11 +62,15 @@ class StreamingFormatter:
 
         output = "".join(output_chunks)
 
-        # Write to file
-        with open(self.output_file, "w", encoding="utf-8") as f:
+        # Write to file (append if this is a subsequent check)
+        mode = "a" if append else "w"
+        with open(self.output_file, mode, encoding="utf-8") as f:
+            if append:
+                f.write("\n\n")  # Separator between checks
             f.write(output)
 
-        print_fn(f"\nResults written to {self.output_file}")
+        action = "appended to" if append else "written to"
+        print_fn(f"\nResults {action} {self.output_file}")
 
         return output
 

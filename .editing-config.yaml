@@ -9,12 +9,12 @@ profiles:
   bachelors-reader:
     reader: "a Bachelor's in mathematics who mostly knows what formal verification is"
     checks: [reader, clarity, value]
-    model: openrouter/anthropic/claude-3.5-sonnet
+    model: openrouter/anthropic/claude-sonnet-4.5
 
   # Clarity-only check
   clarity-check:
     checks: [clarity]
-    model: openrouter/anthropic/claude-3.5-sonnet
+    model: openrouter/anthropic/claude-sonnet-4.5
 
   # Math document checking with custom instructions
   math-doc:

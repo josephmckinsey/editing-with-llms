@@ -159,14 +159,6 @@ def main(
             )
         return
 
-    # Streaming format doesn't support multiple checks
-    if check_profile.output_format == "streaming" and len(check_profile.checks) > 1:
-        click.echo(
-            "Error: Streaming format does not support multiple checks. Use compiler or json format.",
-            err=True,
-        )
-        sys.exit(1)
-
     # Run all checks
     all_issues = []
 
@@ -192,13 +184,12 @@ def main(
             function=check_profile.function,
         )
 
-        # Call LLM with reasoning tokens if using Gemini
+        # Call LLM with reasoning/extended thinking
         llm_options = {}
-        if (
-            check_profile.prompt_config.use_reasoning
-            and "gemini" in llm_model.model_id.lower()
-        ):
-            llm_options["reasoning_max_tokens"] = 2000
+        if check_profile.prompt_config.use_reasoning:
+            # llm-openrouter plugin reasoning parameters
+            # See: https://github.com/simonw/llm-openrouter/issues/45
+            llm_options["reasoning_effort"] = "medium"
 
         # Handle streaming vs compiler output
         if check_profile.output_format == "streaming":
@@ -207,7 +198,8 @@ def main(
             response = llm_model.prompt(
                 user_prompt, system=system_prompt, **llm_options
             )
-            output = formatter.format_and_stream(response)
+            # Append to output.txt for checks after the first
+            output = formatter.format_and_stream(response, append=(i > 0))
             # Note: streaming format doesn't parse to Issues
         else:
             # Compiler/JSON format: parse response to Issues

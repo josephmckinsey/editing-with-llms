@@ -17,10 +17,16 @@ A CLI-based text editing tool that uses LLMs to bridge the author-reader gap. Th
 
 ### Check Types
 1. **typo**: Spelling and grammar errors
+
+Checks requiring a `reader` config:
 2. **clarity**: Unclear or confusing sentences
 3. **reader**: Accessibility for a specific reader profile
 4. **value**: Whether text provides value to the target reader
+
+Checks requiring `reader` and `function` config.
 5. **function**: Whether text accomplishes its intended function (inform, convince, etc.)
+
+Streaming-only checks:
 6. **guess-function**: Infers the text's intended function
 7. **guess-value**: Infers the main value for readers
 8. **guess-reader**: Infers the intended audience

@@ -4,10 +4,15 @@ Warning: A lot of this was written with AI. You have been warned.
 
 A command-line tool for analyzing and editing text files using large language models (LLMs). It provides several types of checks, including typo/grammar detection, clarity analysis, reader accessibility, value assessment, and function evaluation, all powered by the [llm](https://github.com/simonw/llm) Python library.
 
+This scaffolding is intended to be used _after_ writing, preferably after a first or second draft, but before you
+send it to a friend or human editor.
+
+When used with `openrouter/anthropic/claude-sonnet-4.5`, typo checking 600 lines (9000 tokens) costs around $0.05 to $0.15 per check. I've tended to need at least 5 runs to get most typos.
+
 ## Baked-in Prompts
 
 None of these prompts are instructed to make suggestions; ignore any suggestions that the LLM sneaks
-through.
+through. You can see the exact system and user prompt with "
 
 - **`typo`** - Spelling, grammar, and typo detection.
 - **`clarity`** - Identifies unclear or confusing sentences.
@@ -29,9 +34,14 @@ through.
    pip install .
    ```
 
+## Alternatively with uv
+
+- `uv tool install /path/to/package --with llm-openrouter`
+- `uvx --from editing-with-llms writing-buddy ...`
+
 ## Usage
 
-1. Make an `.editing-config.yml` like in the repository:
+1. Make an `.editing-config.yaml` like in the repository:
 
 ```yaml
 profiles:
@@ -43,7 +53,7 @@ profiles:
   normal-reader:
     reader: "a Bachelor's in mathematics who mostly knows what formal verification is"
     checks: [reader, clarity, value]
-    model: openrouter/anthropic/claude-3.5-sonnet
+    model: openrouter/anthropic/claude-sonnet-4.5
 
   math-doc:
     checks: [typo]
@@ -62,7 +72,12 @@ profiles:
     output_format: streaming
 ```
 
-Run the tool from the command line:
+It is recommended that you use a powerful enough reasoning model. I've found that even low or medium reasoning
+improves the precision and recall dramatically.
+
+I also recommend thinking quite hard about what readers and functions your work is supposed to serve.
+
+2. Run the tool from the command line:
 
 ```sh
 writing-buddy [OPTIONS] INPUT_FILE
@@ -78,6 +93,14 @@ writing-buddy [OPTIONS] INPUT_FILE
 - `--dry-run`: Print prompts without calling LLM
 - `--char-limit INTEGER`: Warn if input exceeds this many characters (default: 50000)
 - `--help`: Show this message and exit.
+
+## TODO Improvements
+
+- Being able to reuse an LLM may allow you to have lower costs. For instance, you may
+ask for typos, get 10 errors, then you say "fixed", and it gives another 10. This can save
+on costs. Just being able to drop into "chat" mode is helpful often.
+- Simliarly, being able to combine multiple checks may be helpful in many instances,
+although I expect that to reduce performance.
 
 ## License
 MIT License
