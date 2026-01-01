@@ -98,9 +98,19 @@ writing-buddy [OPTIONS] INPUT_FILE
 
 - Being able to reuse an LLM may allow you to have lower costs. For instance, you may
 ask for typos, get 10 errors, then you say "fixed", and it gives another 10. This can save
-on costs. Just being able to drop into "chat" mode is helpful often.
-- Simliarly, being able to combine multiple checks may be helpful in many instances,
-although I expect that to reduce performance.
+on costs. Just being able to drop into "chat" mode is helpful often. We could even have
+a nice interface to responding to specific types of errors.
+- This could be part of some generic prompt templating where mustache templated prompts can read input from yaml files.
+- The request for a specific task should probably be given _after_ the actual work itself,
+so that prompt cacheing works effectively.
+- We could try merging all the prompts into one super system prompt, which could then be cached
+for different queries and chats.
+
+So our options are:
+- `{ALL INSTRUCTIONS} {TEXT} {SPECIFIC REQUEST}`
+- `{GENERIC INSTRUCTIONS} {TEXT} {TASK SYSTEM PROMPT}`
+- `{TEXT} {TASK SYSTEM PROMPT} "Can you check my work?"`
+- `{TASK SYSTEM PROMPT} "Check the following: " {TEXT}` Current process
 
 ## License
 MIT License
